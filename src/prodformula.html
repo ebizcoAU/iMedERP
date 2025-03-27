@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>
+        
+        .dx-toolbar.dx-popup-title {  
+            background-color:cornflowerblue !important;
+        } 
+
+        .dx-toolbar.dx-popup-bottom{
+            background-color:cornflowerblue !important;
+        }
+
+        .first-group,
+        .second-group,
+        .third-group {
+            padding: 20px;
+        }
+        .second-group {
+            background-color: rgba(191, 191, 191, 0.15);
+        }
+        .third-group {
+            background-color: rgba(177, 94, 94, 0.15);
+        }
+        .qrcode {
+            padding: 10px; 
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "manman", "page": "prodformula"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="pt-10 pb-10"></div>
+            <div class="container-fluid mt-n22 px-6">
+                <div class="row mt-8">
+                    <div class="card">
+                        <div class="dx-viewport">
+                            <div id="profileContainer" class="mt-2"></div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/prodformula-min.js"></script>
+    <% } else { %>
+        <script src="@@webRoot/assets/js/prodformula.js"></script>
+    <% } %>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include("partials/mhead.html")
+</head>  
+<body data-theme-color="color-primary">
+<div class="page-wraper">
+    
+    <!-- Preloader -->
+    <div id="preloader">
+		<div class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+    <!-- Preloader end-->
+	
+	<!-- Header -->
+    <header class="header">
+		<div class="main-bar">
+			<div class="container">
+				<div class="header-content">
+					<div class="left-content">
+						<a href="javascript:void(0);" class="back-btn">
+							<svg height="512" viewBox="0 0 486.65 486.65" width="512">
+								<path d="m202.114 444.648c-8.01-.114-15.65-3.388-21.257-9.11l-171.875-171.572c-11.907-11.81-11.986-31.037-.176-42.945.058-.059.117-.118.176-.176l171.876-171.571c12.738-10.909 31.908-9.426 42.817 3.313 9.736 11.369 9.736 28.136 0 39.504l-150.315 150.315 151.833 150.315c11.774 11.844 11.774 30.973 0 42.817-6.045 6.184-14.439 9.498-23.079 9.11z"/><path d="m456.283 272.773h-425.133c-16.771 0-30.367-13.596-30.367-30.367s13.596-30.367 30.367-30.367h425.133c16.771 0 30.367 13.596 30.367 30.367s-13.596 30.367-30.367 30.367z"/>
+							</svg>
+						</a>
+						<h5 class="title mb-0 text-nowrap" id="updateprofile"></h5>
+					</div>
+					<div class="mid-content"></div>
+					<div class="right-content pe-2" >
+                        <a href="/mindex">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.14373 20.7821V17.7152C9.14372 16.9381 9.77567 16.3067 10.5584 16.3018H13.4326C14.2189 16.3018 14.8563 16.9346 14.8563 17.7152V20.7732C14.8562 21.4473 15.404 21.9951 16.0829 22H18.0438C18.9596 22.0023 19.8388 21.6428 20.4872 21.0007C21.1356 20.3586 21.5 19.4868 21.5 18.5775V9.86585C21.5 9.13139 21.1721 8.43471 20.6046 7.9635L13.943 2.67427C12.7785 1.74912 11.1154 1.77901 9.98539 2.74538L3.46701 7.9635C2.87274 8.42082 2.51755 9.11956 2.5 9.86585V18.5686C2.5 20.4637 4.04738 22 5.95617 22H7.87229C8.19917 22.0023 8.51349 21.8751 8.74547 21.6464C8.97746 21.4178 9.10793 21.1067 9.10792 20.7821H9.14373Z" fill="#000000"></path>
+                            </svg>
+                        </a> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+    <!-- Header End -->
+	
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="container dx-viewport profile-area">
+			<div class="profile">	
+				<div class="d-flex align-items-center mb-3">
+					<div class="media media-110 me-3 bg-dark" id="staffimg"></div>
+					<div class="about-profile">
+						<h5 class="sub-title mb-0 namex"></h5>
+						<h6 class="sub-title fade-text mb-1 font-w500 companyx"></h6>
+						<h6 class="sub-title fade-text mb-1 font-w500 emailx"></h6>
+                        <h6 class="sub-title fade-text mb-0 font-w500 addressex"></h6>
+						<h6 class="sub-title fade-text mb-0 font-w500 rolex"></h6>
+					</div>
+				</div>
+			</div>   
+            <div class="edit-profile pt-2">
+				<form id="profileForm1" >
+					<div class="mb-3 form-group">
+						<div id="namex"></div>
+					</div>
+					<div class="mb-3 form-group">
+						<div id="emailx"></div>
+					</div>
+					<div class="mb-3 form-group">
+						<div id="momoaccountx"></div>
+					</div>
+					<div class="mb-3 form-group">
+						<div id="cityx"></div>
+					</div>
+					<div class="mb-3 form-group">
+						<div id="wardx"></div>
+					</div>
+					<div class="mb-3 form-group">
+						<div id="phuongx"></div>
+					</div>
+					<% if ((roleID == 1) || (roleID == 2) || (roleID > 3)) { %>
+					<div class="mb-3 form-group">
+						<div id="addressx"></div>
+					</div>
+					<div class="mb-3 form-group">
+						<div id="companyx"></div>
+					</div>
+					<div class="mb-3 form-group">
+						<div class="divider border-primary inner-divider left mb-0 "><span id="cccdfronttxt"></span></div>	
+						<div id="cccdfrontx"></div>
+					</div>
+					<div class="mb-3 form-group">
+						<div class="divider border-primary inner-divider left mb-0 "><span id="cccdbacktxt"></span></div>	
+						<div id="cccdbackx"></div>
+					</div>
+					<% } %>
+					
+					<div class="mb-3 input-group">
+						<a href="javascript:void(0);" class="btn mt-2 btn-primary w-100 profileBtn">LƯU</a>
+					</div>
+				</form>
+				<div class="text-center mb-auto p-tb5">
+					<a href="javascript:void(0);" class="saprate text-soft loginmsg"></a>
+				</div>
+				
+            </div>
+        </div>
+		
+		<div id="toast"></div>	
+    </div>
+    <!-- Page Content End-->
+</div> 
+
+<div id="name" style="display:none"><%=namex%></div>
+<div id="addressee" style="display:none"><%=addressx%></div>
+<div id="provincesid" style="display:none"><%=provincesIDx%></div>
+<div id="wardsid" style="display:none"><%=wardsIDx%></div>
+<div id="phuongid" style="display:none"><%=phuongIDx%></div>
+<div id="momoaccount" style="display:none"><%=momoAccountx%></div>
+<div id="email" style="display:none"><%=emailx%></div>
+<div id="imglinkx" style="display:none"><%=imgLink%></div>
+<div id="cccdfront" style="display:none"><%=cccdfrontx%></div>
+<div id="cccdback" style="display:none"><%=cccdbackx%></div>
+
+<link href="@@webRoot/node_modules/devextreme/dist/css/dx.light.css" rel="stylesheet">
+@@include("partials/mscripts.html")
+<script src="@@webRoot/node_modules/devextreme/dist/js/dx.all.js"></script>
+
+<% if (production==1) { %>
+	<script src="@@webRoot/assets/js/mprofileedit-min.js"></script>
+	<script src="@@webRoot/assets/js/localsrc-min.js"></script>
+<% } else { %>
+	<script src="@@webRoot/assets/js/mprofileedit.js"></script>
+	<script src="@@webRoot/assets/js/localsrc.js"></script>
+<% } %>
+
+
+
+
+      
+
+</html>

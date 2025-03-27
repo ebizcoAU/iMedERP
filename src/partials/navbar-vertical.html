@@ -1,0 +1,364 @@
+ <!-- Sidebar -->
+ <nav class="navbar-vertical navbar">
+    <div class="nav-scroller">
+        <!-- Brand logo -->
+        <a class="navbar-brand text-light" href="@@webRoot/#">
+            <img src="@@webRoot/assets/images/icons/logoimedic.png" alt="" width="120"/>
+            <span class="align-middle"><sup><small class="badge bg-blue text-uppercase">V1.0</small></sup></span>
+			<h5 class="text-warning text-uppercase"><%= company %> </h5>
+            <h6 class="text-light"><%= name %> @ <%= position %></h6>
+        </a>
+        
+        <!-- Navbar nav -->
+        <ul class="navbar-nav flex-column" id="sideNavbar">
+        <!-- Nav item -->
+        <% if ( (roleID == 1) || ((roleID > 3) && (roleID < 7)) ) { %>
+        <li class="nav-item">
+            <div class="navbar-heading" id="livestatistic"></div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link has-arrow @@if (context.page_group !== 'bizactivity') { collapsed }" href="#!" data-bs-toggle="collapse" data-bs-target="#navStats" aria-expanded="false" aria-controls="navStats">
+                <i data-feather="pie-chart" class="nav-icon icon-xs me-2"></i><div id="siteactivity"></div> 
+            </a>
+            <div id="navStats" class="collapse @@if (context.page_group === 'bizactivity') { show }" data-bs-parent="#sideNavbar">
+                <ul class="nav flex-column">
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'sitestat1') { active }" href="/">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div id="summarystat"></div> 
+                        </a>
+                    </li>
+                    <% if (roleID < 7) { %>
+                    
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'sitestat4') { active }" href="/salestat">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="salestat"></div> 
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </li>
+        <% } %>
+        <li class="nav-item">
+            <div class="navbar-heading" id="businessmanagement"></div>
+        </li>
+        <li class="nav-item">
+            <% if ((roleID == 1) || (roleID == 2) || (roleID == 4) || (roleID == 5) || (roleID == 6) ) { %>
+            <a class="nav-link has-arrow @@if (context.page_group !== 'contact') { collapsed }" href="#!" data-bs-toggle="collapse" data-bs-target="#navContact" aria-expanded="false" aria-controls="navContact">
+                <i data-feather="users" class="nav-icon icon-xs me-2"></i><div class="contact"></div> 
+            </a>
+            <div id="navContact" class="collapse @@if (context.page_group === 'contact') { show }" data-bs-parent="#sideNavbar">
+                <ul class="nav flex-column">
+                    <% if ((roleID==1) && (groupID==1)) { %>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'mangroup') { active }" href="/mangroup">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="mangroup"></div> 
+                        </a>
+                    </li>
+                    <% } %>
+                    
+                    <% if (roleID == 1) { %>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'agent') { active }" href="/agent">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="agent"></div> 
+                        </a>
+                    </li>
+                    <% } %>
+                    <% if ((roleID == 1) || (roleID == 6)) { %>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'agestaff') { active }" href="/agestaff">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="agestaff"></div> 
+                        </a>
+                    </li>
+                    <% } %>
+                    <% if ((roleID == 1)  || (roleID == 6) || (roleID == 7)) { %>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'customer') { active }" href="/customer">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="customer"></div> 
+                        </a>
+                    </li>
+                    <% } %>
+                    <% if (( roleID == 1) || (roleID == 6) ) { %>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'supplier') { active }" href="/supplier">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="supplier"></div> 
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+            <% } %>
+        </li>
+        <% if ((roleID == 1) || (roleID == 2) || (roleID == 6) ) { %>
+        <li class="nav-item">
+            <a class="nav-link has-arrow @@if (context.page_group !== 'prodman') { collapsed }" href="#!" data-bs-toggle="collapse" data-bs-target="#navprodman" aria-expanded="false" aria-controls="navprodman">
+                <i data-feather="gift" class="nav-icon icon-xs me-2"></i><div id="productmanagement"></div> 
+            </a>
+            <div id="navprodman" class="collapse @@if (context.page_group === 'prodman') { show }" data-bs-parent="#sideNavbar">
+                <ul class="nav flex-column">
+                    <% if ((roleID == 1) || (roleID == 6) ){ %>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'category') { active }" href="/category">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="category"></div> 
+                        </a>
+                    </li>
+                   
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'product') { active }" href="/product">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="product"></div> 
+                        </a>
+                    </li>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'prodstat') { active }" href="/prodstat">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="prodstat"></div> 
+                        </a>
+                    </li>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'prodmon') { active }" href="/prodmon">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="prodmon"></div> 
+                        </a>
+                    </li>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'prodcount') { active }" href="/prodcount">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="prodcount"></div> 
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </li>
+        <% } %>
+        <% if ((roleID == 1) || (roleID==6)  ) { %> 
+            <li class="nav-item">
+                <a class="nav-link has-arrow @@if (context.page_group !== 'prescriptman') { collapsed }" href="#!" data-bs-toggle="collapse" data-bs-target="#navprescription" aria-expanded="false" aria-controls="navprescription">
+                    <i data-feather="award" class="nav-icon icon-xs me-2"></i><div class="diagnostic"></div> 
+                </a>
+                <div id="navprescription" class="collapse @@if (context.page_group === 'prescriptman') { show }" data-bs-parent="#sideNavbar">
+                    <ul class="nav flex-column">
+                        <li class="nav-item" style="font-size: 13px;">
+                            <a class="nav-link @@if (context.page === 'illness') { active }" href="/illness">
+                                <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="illness"></div> 
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item" style="font-size: 13px;">
+                            <a class="nav-link @@if (context.page === 'symptom') { active }" href="/symptom">
+                                <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="symptom"></div> 
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="font-size: 13px;">
+                            <a class="nav-link @@if (context.page === 'diagnostic') { active }" href="/diagnostic">
+                                <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="diagnostic"></div> 
+                            </a>
+                        </li>
+                        <li class="nav-item" style="font-size: 13px;">
+                            <a class="nav-link @@if (context.page === 'prescription') { active }" href="/prescription">
+                                <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="prescription"></div> 
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>    
+        <% } %>
+        <% if ((roleID == 1) || ((roleID == 2) && (divisionID == 3))  ) { %> 
+            <li class="nav-item">
+                <a class="nav-link has-arrow @@if (context.page_group !== 'promoteman') { collapsed }" href="#!" data-bs-toggle="collapse" data-bs-target="#navpromote" aria-expanded="false" aria-controls="navpromote">
+                    <i data-feather="award" class="nav-icon icon-xs me-2"></i><div id="promotionmanagement"></div> 
+                </a>
+                <div id="navpromote" class="collapse @@if (context.page_group === 'promoteman') { show }" data-bs-parent="#sideNavbar">
+                    <ul class="nav flex-column">
+                        <li class="nav-item" style="font-size: 13px;">
+                            <a class="nav-link @@if (context.page === 'promotion') { active }" href="/promotion">
+                                <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div id="promotion"></div> 
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item" style="font-size: 13px;">
+                            <a class="nav-link @@if (context.page === 'campaign') { active }" href="/campaign">
+                                <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div id="campaign"></div> 
+                            </a>
+                        </li>
+
+                        <li class="nav-item" style="font-size: 13px;">
+                            <a class="nav-link @@if (context.page === 'promotype') { active }" href="/promotype">
+                                <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div id="promotype"></div> 
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>    
+        <% } %>
+        
+        <% if ((roleID == 1) || ((roleID == 2) && (divisionID == 3))) { %> 
+        <li class="nav-item" >
+            <a class="nav-link has-arrow @@if (context.page_group !== 'managesalediary') { collapsed }" href="#!" data-bs-toggle="collapse" data-bs-target="#navsalediary" aria-expanded="false" aria-controls="navsalediary">
+                <i data-feather="grid" class="nav-icon icon-xs me-2"></i><div id="mangagesalediary"></div> 
+            </a>
+            <div id="navsalediary" class="collapse @@if (context.page_group === 'navsalediary') { show }" data-bs-parent="#sideNavbar">
+                <ul class="nav flex-column">
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'salediary') { active }" href="/salediary">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="salediarybystaff"></div> 
+                        </a>
+                    </li>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'salediarycus') { active }" href="/salediarycus">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="salediarybycustomer"></div> 
+                        </a>
+                    </li>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'quickcheck') { active }" href="/quickcheck">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="quickcheck"></div> 
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <% } %>
+        <% if ( (roleID == 1) || ((roleID == 2) && (divisionID == 2)) || (roleID == 6) ) {  %>
+            
+        <li class="nav-item">
+            <a class="nav-link has-arrow @@if (context.page_group !== 'finactivity') { collapsed }" href="#!" data-bs-toggle="collapse" data-bs-target="#navFin" aria-expanded="false" aria-controls="navFin">
+                <i data-feather="pie-chart" class="nav-icon icon-xs me-2"></i><div class="financemanagement"></div> 
+            </a>
+            <div id="navFin" class="collapse @@if (context.page_group === 'finactivity') { show }" data-bs-parent="#sideNavbar">
+                <ul class="nav flex-column">
+                    <%  if  (roleID == 1) {  %>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'accountlist') { active }" href="/accountlist">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="accountlist"></div> 
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'balancesheet') { active }" href="/balancesheet">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="balancesheet"></div> 
+                        </a>
+                    </li>
+                    <% } %>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'profitnloss') { active }" href="/profitnloss">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="profitnloss"></div> 
+                        </a>
+                    </li>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'balancesheet') { active }" href="/balancesheet">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="balancesheet"></div> 
+                        </a>
+                    </li>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'accountinit') { active }" href="/accinit">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="accountinit"></div> 
+                        </a>
+                    </li>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'revenue') { active }" href="/revenue">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="revenue"></div> 
+                        </a>
+                    </li>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'expense') { active }" href="/expense">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="expense"></div> 
+                        </a>
+                    </li>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'payroll') { active }" href="/payroll">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="payroll"></div> 
+                        </a>
+                    </li>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'assetman') { active }" href="/assetman">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div class="assetman"></div> 
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <% } %>    
+        <% if ((roleID < 3) || (roleID > 5)) { %>
+        <li class="nav-item">
+            <div class="navbar-heading" id="walletmanagement"></div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link has-arrow @@if (context.page === 'walletxchange') { active }" href="/salexchg" >
+                <i data-feather="search" class="nav-icon icon-xs me-2"></i><div id="walletxchange"></div>
+            </a>
+            <% if (roleID == 1)  { %> 
+            <a class="nav-link has-arrow @@if (context.page === 'walletapproval') { active }" href="/walletapproval" >
+                <i data-feather="trello" class="nav-icon icon-xs me-2"></i><div id="walletapproval"></div>
+            </a>
+            <% } %>
+        </li>
+        <% } %>
+        <% if (roleID == 1) { %>
+            <li class="nav-item">
+                <div class="navbar-heading" id="supportmanagement"></div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link has-arrow @@if (context.page === 'esmsxchange') { active }" href="/esmsxchange" >
+                    <i data-feather="search" class="nav-icon icon-email me-2"></i><div id="esmsxchange"></div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link has-arrow @@if (context.page === 'topupservice') { active }" href="/topupservice" >
+                    <i data-feather="search" class="nav-icon icon-email me-2"></i><div id="topupservice"></div>
+                </a>
+            </li>
+        <% } %>
+        <li class="nav-item">
+            <div class="navbar-heading" id="account"></div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link has-arrow @@if (context.page_group !== 'settings') { collapsed }" href="#!" data-bs-toggle="collapse" data-bs-target="#navsettings" aria-expanded="false" aria-controls="navsettings">
+                <i data-feather="settings" class="nav-icon icon-xs me-2"></i><div id="settings"></div> 
+            </a>
+            <div id="navsettings" class="collapse @@if (context.page_group === 'settings') { show }" data-bs-parent="#sideNavbar">
+                <ul class="nav flex-column">
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'updateprofile') { active }" href="/updateprofile">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div id="updateprofile"></div> 
+                        </a>
+                    </li>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'changepassword') { active }" href="/changepassword">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div id="changepassword"></div> 
+                        </a>
+                    </li>
+                    <% if ((roleID == 1) && (groupID==1)) { %>
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'resetdb') { active }" href="/resetdb">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div id="resetdb"></div> 
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </li>
+        
+        <% if ( (roleID == 5) || (roleID == 6)|| (roleID == 7) || (roleID == 3)) { %> 
+        <li class="nav-item">
+            <a class="nav-link has-arrow @@if (context.page_group !== 'mywallet') { collapsed }" href="#!" data-bs-toggle="collapse" data-bs-target="#navmywallet" aria-expanded="false" aria-controls="navmywallet">
+                <i data-feather="dollar-sign" class="nav-icon icon-xs me-2"></i><div id="mywallet"></div> 
+            </a>
+            <div id="navmywallet" class="collapse @@if (context.page_group === 'mywallet') { show }" data-bs-parent="#sideNavbar">
+                <ul class="nav flex-column">
+                    <li class="nav-item" style="font-size: 13px;">
+                        <a class="nav-link @@if (context.page === 'checkwallet') { active }" href="/checkwallet">
+                            <i class="align-items-center">&#8594;</i>&nbsp;&nbsp;<div id="checkwallet"></div> 
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <% } %>
+        </ul>
+        <div class="my-12 mt-5 pt-2">
+            <div class="text-center p-3 mx-4" style="background-color: rgba(80, 64, 64, 0.2);">
+                © 2023 Copyright
+                <a class="text-grey" href="https://ebizco.com.au/">eBizco Pty Ltd</a>
+            </div>
+        </div>
+    </div>
+    
+</nav>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include("partials/mhead.html")
+	<style>
+		.page-content .banner-wrapper .container h2 {
+			text-shadow: 3px 5px #343131;
+		}
+	</style>
+</head>   
+<body class="gradiant-bg" data-theme-color="color-primary">
+<div class="page-wraper">
+    
+    <!-- Preloader -->
+	<div id="preloader">
+		<div class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+    <!-- Preloader end-->
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Banner -->
+        <div class="banner-wrapper">
+            <div class="container inner-wrapper">
+                <img src="<%=tlogo%>" alt="/">
+				<h2><%=tname%></h2>
+            </div>
+        </div>
+        <!-- Banner End -->
+        <div class="account-box">
+            <div class="container">
+                <div class="account-area">
+					<div>
+						<h2 class="title">Nhập mã OTP</h2>
+						<p class="text-soft">Kiểm tra tin nhắn SMS hoặc email cho mã OTP đã được gửi, nhập mã OTP dưới đây.</p>
+						<form id="otpForm2">
+							<div id="otp" class="digit-group">
+								<input class="form-control" type="number" id="digit2" name="digit2" placeholder="-" data-next="digit3" data-previous="digit1" inputmode="numeric" pattern="[0-9]*">
+								<input class="form-control" type="number" id="digit3" name="digit3" placeholder="-" data-next="digit4" data-previous="digit2" inputmode="numeric" pattern="[0-9]*">
+								<input class="form-control" type="number" id="digit4" name="digit4" placeholder="-" data-next="digit5" data-previous="digit3" inputmode="numeric" pattern="[0-9]*">
+								<input class="form-control" type="number" id="digit5" name="digit5" placeholder="-" data-next="digit6" data-previous="digit4" inputmode="numeric" pattern="[0-9]*">
+								<input class="form-control" type="number" id="digit6" name="digit6" placeholder="-" data-next="digit7" data-previous="digit5" inputmode="numeric" pattern="[0-9]*">
+							</div>
+							<button type="submit" class="btn btn-primary btn-block">TIẾP TỤC</button>
+						</form>
+						<div class="d-flex align-items-center justify-content-center">
+							<a href="javascript:void(0);" class="text-light text-center d-block">Chưa nhận được mã OTP?</a>
+							<a href="/mforgotpasswd" class="btn-link d-block ms-2 text-underline">Gửi lại</a>
+						</div>
+						<div class="d-flex align-items-center justify-content-center">
+							<a href="javascript:void(0);" class="text-danger text-center d-block loginmsg"></a>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Content End -->
+    <!-- Footer -->
+    <footer class="footer fixed">
+        <div class="container">
+        	<a href="<%= devcompanyurl %>" class="d-block text-center">
+				<span>Powered by</span>
+				<img src="./assets/images/icons/minilogo.png"> 
+			</a>
+        </div>
+    </footer>
+    <!-- Footer End -->
+</div>
+
+<!-- Libs JS -->
+<script src="@@webRoot/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="@@webRoot/node_modules/devextreme/dist/js/dx.all.js"></script>
+<script src="@@webRoot/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="@@webRoot/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+
+
+<% if (production==1) { %>
+	<script src="@@webRoot/assets/js/language-min.js"></script>
+	<script src="@@webRoot/assets/js/dz.carousel-min.js"></script><!-- Swiper -->
+	<script src="@@webRoot/assets/js/settings-min.js"></script>
+	<script src="@@webRoot/assets/js/custom-min.js"></script>
+	<script src="@@webRoot/assets/js/mindex-min.js"></script>
+<% } else { %>
+	<script src="@@webRoot/assets/js/language.js"></script>
+	<script src="@@webRoot/assets/js/dz.carousel.js"></script><!-- Swiper -->
+	<script src="@@webRoot/assets/js/settings.js"></script>
+	<script src="@@webRoot/assets/js/custom.js"></script>
+	<script src="@@webRoot/assets/js/mindex.js"></script>
+<% } %>
+
+</body>
+</html>

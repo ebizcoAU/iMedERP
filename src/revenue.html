@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>
+        
+        a[data-gallery] {
+            display: inline-flex;
+            padding: 2px;
+            border: 1px solid #ddd;
+            transition: border-color .3s ease;
+            cursor: zoom-in;
+
+            &:hover {
+                border-color: #aaa;
+            }
+        }
+
+        #myimg {
+            display: block;
+            max-width:480px;
+            max-height:270px;
+            width: auto;
+            height: auto;
+        }
+        /* *********************************************************/
+        .dx-toast-content {
+            min-width: 300px;
+            max-width: 400px;
+        }
+        #profileContainer {
+            height: 880px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "finactivity", "page": "revenue"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="pt-10 pb-10"></div>
+            <div class="container-fluid mt-n22 px-6">
+                <div class="row mt-8">
+                    <div class="card">
+                        <div class="dx-viewport">
+                            <div id="profileContainer" class="mt-2"></div>
+                        </div>
+                    </div> 
+                </div>
+                <div id="toast"></div>
+            </div>
+        </div>
+    </div>
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" crossorigin="anonymous" >
+    <link href="@@webRoot/node_modules/bootstrap-fileinput/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="@@webRoot/assets/css/photoviewer.css" rel="stylesheet">
+    
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/revenue-min.js"></script>
+        <script src="@@webRoot/assets/js/photoviewer-min.js"></script>
+    <% } else { %>
+        <script src="@@webRoot/assets/js/revenue.js"></script>
+        <script src="@@webRoot/assets/js/photoviewer.js"></script>
+    <% } %>
+
+    <script src="@@webRoot/node_modules/bootstrap-fileinput/js/plugins/buffer.min.js" type="text/javascript"></script>
+    <script src="@@webRoot/node_modules/bootstrap-fileinput/js/plugins/filetype.min.js" type="text/javascript"></script>
+    <script src="@@webRoot/node_modules/bootstrap-fileinput/js/plugins/piexif.min.js" type="text/javascript"></script>
+    <script src="@@webRoot/node_modules/bootstrap-fileinput/js/plugins/sortable.min.js" type="text/javascript"></script>
+    <script src="@@webRoot/node_modules/bootstrap-fileinput/js/fileinput.min.js"></script>
+    <script src="@@webRoot/node_modules/bootstrap-fileinput/themes/fa5/theme.min.js"></script>
+
+    
+    
+
+
+
+</body>
+
+</html>

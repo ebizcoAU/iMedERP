@@ -1,0 +1,181 @@
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="AntiFake &amp; Product Authentication and Distribution Management System">
+<meta name="author" content="eBizCoAU">
+<meta name="keywords" content="Product Authentication and Distribution Management System">
+
+
+<!-- Favicon icon-->
+<link rel="shortcut icon" type="image/x-icon" href="@@webRoot/assets/images/favicon/favicon.ico">
+
+<!-- Libs CSS -->
+
+
+<link href="@@webRoot/node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link href="@@webRoot/node_modules/dropzone/dist/dropzone.css"  rel="stylesheet">
+<link href="@@webRoot/node_modules/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+<link href="@@webRoot/node_modules/prismjs/themes/prism-okaidia.min.css" rel="stylesheet">
+<!--
+<link href="@@webRoot/node_modules/devexpress-diagram/dist/dx-diagram.min.css" rel="stylesheet">
+<link href="@@webRoot/node_modules/devexpress-gantt/dist/dx-gantt.min.css" rel="stylesheet">
+-->
+
+
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" crossorigin="anonymous" >
+<link href="@@webRoot/node_modules/bootstrap-fileinput/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+
+
+
+
+<!-- Theme CSS -->
+<!-- build:css @@webRoot/assets/css/theme.min.css -->
+<link rel="stylesheet" href="@@webRoot/assets/css/theme.css">
+<!-- endbuild -->
+
+
+
+<!-- DevExtreme theme -->
+<% if (themeID == 1) { %> 
+    <link href="@@webRoot/node_modules/devextreme/dist/css/dx.light.css" rel="stylesheet">
+    <style> 
+        body {background-color: rgb(182, 182, 179);} 
+        .card {background-color: rgb(152, 162, 159);} 
+        .container-fluid {background-color: rgb(182, 182, 179); }
+        .card-body {color: #111; }
+        .card-title {color: #333; } 
+        .card-subtitle {color: #333; }  
+        .dx-datagrid-headers {
+            background-color:cornflowerblue !important;
+            color: aliceblue;
+        }
+    </style>
+<% } else if (themeID == 2) { %>
+    <link href="@@webRoot/node_modules/devextreme/dist/css/dx.dark.css" rel="stylesheet">
+    <style> 
+        body {background-color: rgb(46, 45, 45); }  
+        .card {background-color: rgb(36, 35, 35); }
+        .container-fluid{background-color: rgb(46, 45, 35); } 
+        .card-body {color: #aaa; }
+        .card-title {color: #ccc; } 
+        .card-subtitle {color: #aaa; } 
+        .dx-datagrid-headers {
+            background-color:rgb(71, 78, 92) !important;
+            color: aliceblue;
+        }
+        .dx-datagrid .dx-row-alt {
+            border-top: 1px solid #42516c;
+            border-bottom: 1px solid #42516c;
+        }
+        .dx-datagrid .dx-row-alt > td,
+        .dx-datagrid .dx-row-alt > tr > td {
+            background-color: #222222;
+        }
+        .dx-datagrid .dx-row-alt.dx-row:not(.dx-row-removed) {
+            border-bottom-color: transparent;
+        }
+    </style>
+<% } else if (themeID == 3) { %>
+    <link href="@@webRoot/node_modules/devextreme/dist/css/dx.carmine.css" rel="stylesheet">    
+    <style> 
+        body {background-color:coral; } 
+        .card {background-color: rgb(225,107,60); }
+        .container-fluid {background-color:coral; }
+        .card-body {color: #111; }
+        .card-title {color: #333; } 
+        .card-subtitle {color: #333; }  
+        .dx-datagrid-headers {
+            background-color:rgb(250, 172, 127) !important;
+            color: rgb(50, 51, 52);
+        }
+        .dx-datagrid .dx-row-alt {
+            border-top: 1px solid #42516c;
+            border-bottom: 1px solid #42516c;
+        }
+        .dx-datagrid .dx-row-alt > td,
+        .dx-datagrid .dx-row-alt > tr > td {
+            background-color: #e7b6b6;
+        }
+        .dx-datagrid .dx-row-alt.dx-row:not(.dx-row-removed) {
+            border-bottom-color: transparent;
+        }
+    </style>
+<% } else if (themeID == 4) { %>
+    <link href="@@webRoot/node_modules/devextreme/dist/css/dx.softblue.css" rel="stylesheet">
+    <style> 
+        body {background-color: rgb(8, 63, 112);}  
+        .card {background-color: rgb(8, 43, 92);} 
+        .container-fluid {background-color: rgb(8, 63, 112);} 
+        .card-body {color: #aaa; }
+        .card-title {color: #ccc; } 
+        .card-subtitle {color: #aaa; } 
+        .dx-datagrid-headers {
+            background-color:rgb(29, 67, 139) !important;
+            color: aliceblue;
+        }
+        .dx-datagrid .dx-row-alt {
+            border-top: 1px solid #42516c;
+            border-bottom: 1px solid #42516c;
+        }
+        .dx-datagrid .dx-row-alt > td,
+        .dx-datagrid .dx-row-alt > tr > td {
+            background-color: #d7dcd5;
+        }
+        .dx-datagrid .dx-row-alt.dx-row:not(.dx-row-removed) {
+            border-bottom-color: transparent;
+        }
+    </style>
+<% } else if (themeID == 5) { %>
+    <link href="@@webRoot/node_modules/devextreme/dist/css/dx.darkmoon.css" rel="stylesheet"> 
+    <style>
+        body {background-color: rgb(51, 49, 48);} 
+        .card  {background-color: rgb(31, 29, 28);}  
+        .container-fluid {background-color: rgb(51, 49, 48);} 
+        .card-body {color: #aaa; }
+        .card-title {color: #ccc; } 
+        .card-subtitle {color: #aaa; }
+        .dx-datagrid-headers {
+            background-color:rgb(35, 45, 63) !important;
+            color: aliceblue;
+        }
+        .dx-datagrid .dx-row-alt {
+            border-top: 1px solid #42516c;
+            border-bottom: 1px solid #42516c;
+        }
+        .dx-datagrid .dx-row-alt > td,
+        .dx-datagrid .dx-row-alt > tr > td {
+            background-color: #51698e;
+        }
+        .dx-datagrid .dx-row-alt.dx-row:not(.dx-row-removed) {
+            border-bottom-color: transparent;
+        } 
+    </style>   
+<% } else if (themeID == 6) { %>
+    <link href="@@webRoot/node_modules/devextreme/dist/css/dx.greenmist.css" rel="stylesheet">
+    <style> 
+        body {background-color: rgb(4, 70, 22);}  
+        .card  {background-color: rgb(24, 90, 42);}
+        .container-fluid {background-color: rgb(4, 70, 22);}
+        .card-body {color: #aaa; }
+        .card-title {color: #ccc; } 
+        .card-subtitle {color: #aaa; }
+        .dx-datagrid-headers {
+            background-color:rgb(18, 85, 26) !important;
+            color: aliceblue;
+        }
+        .dx-datagrid .dx-row-alt {
+            border-top: 1px solid #42516c;
+            border-bottom: 1px solid #42516c;
+        }
+        .dx-datagrid .dx-row-alt > td,
+        .dx-datagrid .dx-row-alt > tr > td {
+            background-color: #c0c6d0;
+        }
+        .dx-datagrid .dx-row-alt.dx-row:not(.dx-row-removed) {
+            border-bottom-color: transparent;
+        }    
+    </style>
+        
+<% } %>

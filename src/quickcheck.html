@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>
+        .dx-datagrid-headers {
+            background-color:rgb(56, 56, 63) !important;
+            color: aliceblue;
+        }
+
+        .photoviewer-modal {
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 0 6px 2px rgba(255, 0, 0, .3);
+        }
+
+        .photoviewer-header .photoviewer-toolbar {
+            background-color: rgba(100, 100, 100, .5);
+        }
+
+        .photoviewer-stage {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .85);
+            border: none;
+        }
+
+        .photoviewer-footer .photoviewer-toolbar {
+            display: inline-block;
+            background-color: rgba(100, 100, 0, .5);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .photoviewer-header,
+        .photoviewer-footer {
+            border-radius: 0;
+            pointer-events: none;
+        }
+
+        .photoviewer-title {
+            color: #111111;
+        }
+
+        .photoviewer-button {
+            color: #1188FF;
+            pointer-events: auto;
+        }
+
+        .photoviewer-header .photoviewer-button:hover,
+        .photoviewer-footer .photoviewer-button:hover {
+        color: #1188FF;
+        }
+
+        .button {
+			background-color: #FF6666;
+			border: none;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+			padding: 0px 12px 0px 12px;
+			display: inline-block;
+			font-size: 22px;
+			font-weight: 1000;
+			margin: 6px 0px 0px 2px;
+		}
+		.round {border-radius: 50%;}
+
+        .message-content {
+            background-color: #fff;
+            min-height: 50vh; }
+            .message-content .chat-content {
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                margin-right: 60px; }
+                .message-content .chat-content.user {
+                justify-content: flex-end;
+                margin-right: 0;
+                margin-left: 60px; }
+                .message-content .chat-content.user .message-item {
+                    margin-bottom: 10px; }
+                    .message-content .chat-content.user .message-item .bubble {
+                    background: #54B4D3;
+                    color: #FFF;
+                    border-radius: 12px 12px 0 12px; }
+                    .message-content .chat-content.user .message-item .bubble .emoji-icon {
+                        display: inline-flex;
+                        width: 30px;
+                        height: 30px;
+                        margin: 0 3px; }
+                    .message-content .chat-content.user .message-item .message-time {
+                    text-align: right; }
+                .message-content .chat-content .message-item .bubble {
+                    padding: 8px 15px;
+                    background: #ffe;
+                    border-radius: 12px 12px 12px 0;
+                    color: #141515;
+                    display: inline-flex;
+                    margin-top: 4px;
+                    font-size: 0.875rem;
+                    line-height: 1.4em;
+                    align-items: center; }
+                .message-content .chat-content .message-item .message-time {
+                    font-size: 0.75rem;
+                    padding: 8px 0;
+                    text-align: left;
+                    line-height: 1em;
+                    margin-top: 5px;
+                    color: #767676;
+                    height: 14px; }
+    </style>
+</head>
+
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "navsalediary", "page": "quickcheck"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="pt-20 pb-5"></div>
+            <div class="container-fluid mt-n22 px-6">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-12 col-12 mt-2">
+                        <!-- card -->
+                        <div class="card">
+                            <!-- card body -->
+                            <div class="card-body ">
+                                <div class="d-flex flex-column mb-1 ">
+                                    <div class="media media-110 me-3 pb-2" style="text-align: center;">
+                                        <img id="staffimgx" width="110" height="140" style="object-fit:contain"/>
+                                    </div>
+                                    <div class="pt-2" id="searchBox"></div> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card message-content">
+                            <div class="container chat-box-area bottom-content" id="cardbody">
+                            </div>
+                        </div>
+                        <!-- Footer -->
+                        <footer class="footer border-0 fixed"></footer>
+                    </div>
+                    <div class="col-xl-9 col-lg-8 col-md-12 col-12 mt-2">
+                        <!-- card -->
+                        <div class="card ">
+                            <!-- card body -->
+                            <div class="card-body shadow-lg p-3 mb-5  rounded">
+                                <div class="dx-viewport">
+                                    <div id="profileContainer" class="mt-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div id="toast"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <link href="@@webRoot/assets/css/photoviewer.css" rel="stylesheet">
+    @@include("partials/scripts.html")
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/quickcheck-min.js"></script>
+        <script src="@@webRoot/assets/js/photoviewer-min.js"></script>
+    <% } else { %>
+        <script src="@@webRoot/assets/js/photoviewer.js"></script>
+        <script src="@@webRoot/assets/js/quickcheck.js"></script>
+    <% } %>
+    
+    
+
+
+
+</body>
+
+</html>

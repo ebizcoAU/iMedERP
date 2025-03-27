@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include("partials/mhead.html")
+	
+</head>
+<body data-theme-color="color-primary">
+<div class="page-wraper">
+    
+	<!-- Preloader -->
+	<div id="preloader">
+		<div class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+    <!-- Preloader end-->
+	
+	<!-- Header -->
+	<header class="header">
+		<div class="main-bar">
+			<div class="container">
+				<div class="header-content">
+					<div class="left-content">
+						<a href="javascript:void(0);" class="menu-toggler me-2">
+							<!-- <i class="fa-solid fa-bars font-16"></i> -->
+							<svg class="text-dark" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 24 24" width="30px" fill="#000000">
+								<path d="M13 14v6c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1zm-9 7h6c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1zM3 4v6c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1zm12.95-1.6L11.7 6.64c-.39.39-.39 1.02 0 1.41l4.25 4.25c.39.39 1.02.39 1.41 0l4.25-4.25c.39-.39.39-1.02 0-1.41L17.37 2.4c-.39-.39-1.03-.39-1.42 0z"></path>
+							</svg>
+						</a>
+						<h5 class="title mb-0 text-nowrap"><%= groupName %></h5>
+					</div>
+					<div class="mid-content"></div>
+					<div class="right-content">
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Header -->
+	
+	<!-- Sidebar -->
+    @@include("partials/mnavbar.html")
+    <!-- Sidebar End -->
+	
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="content-inner pt-0">
+			<div class="container p-b30 profile-area">
+				<!-- Other Package -->
+					<h6 class="title-head mb-3 packagetypes"></h6>
+					<div class="row g-3" id="packagetypes">
+						
+					</div>	
+				<!-- Other Package -->
+			</div>    
+		</div>
+        
+    </div>    
+    <!-- Page Content End-->
+	
+	<!-- Menubar -->
+	@@include("partials/mmenubar.html", { "activepanel": "packaging"})
+	<!-- Menubar -->
+	
+	@@include("partials/suppliment.html")
+</div> 
+
+
+<!-- Scripts -->
+@@include("partials/mscripts.html")
+
+
+
+
+
+</body>
+</html>

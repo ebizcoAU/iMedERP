@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include("partials/mhead.html")
+</head>  
+<body data-theme-color="color-primary">
+<div class="page-wraper">
+    
+    <!-- Preloader -->
+    <div id="preloader">
+		<div class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+    <!-- Preloader end-->
+	
+	<!-- Header -->
+    <header class="header">
+		<div class="main-bar">
+			<div class="container">
+				<div class="header-content">
+					<div class="left-content">
+						<a href="javascript:void(0);" class="back-btn">
+							<svg height="512" viewBox="0 0 486.65 486.65" width="512">
+								<path d="m202.114 444.648c-8.01-.114-15.65-3.388-21.257-9.11l-171.875-171.572c-11.907-11.81-11.986-31.037-.176-42.945.058-.059.117-.118.176-.176l171.876-171.571c12.738-10.909 31.908-9.426 42.817 3.313 9.736 11.369 9.736 28.136 0 39.504l-150.315 150.315 151.833 150.315c11.774 11.844 11.774 30.973 0 42.817-6.045 6.184-14.439 9.498-23.079 9.11z"/><path d="m456.283 272.773h-425.133c-16.771 0-30.367-13.596-30.367-30.367s13.596-30.367 30.367-30.367h425.133c16.771 0 30.367 13.596 30.367 30.367s-13.596 30.367-30.367 30.367z"/>
+							</svg>
+						</a>
+						<h5 class="title mb-0 text-nowrap" id="addmember"></h5>
+					</div>
+					<div class="mid-content">
+					</div>
+					<div class="right-content">
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+    <!-- Header End -->
+	
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="container dx-viewport profile-area">
+			<div class="profile">	
+				<div class="d-flex align-items-center mb-3">
+					<div class="about-profile">
+						<h5 class="sub-title mb-0 namex"></h5>
+                        <h6 class="sub-title mb-0 companyx"></h6>
+                        <h6 class="sub-title mb-0 rolex"></h6>
+						<h6 class="sub-title mb-0 uuid"></h6>
+					</div>
+				</div>
+			</div>   
+            <div class="edit-profile">
+				<form id="profileForm1" >
+					<!-- Card Select -->
+					<div class="short-tag style-3" role="group" aria-label="radio toggle button">
+						
+						<% if (roleID==1) { %>
+							<div class="clearfix">
+								<input type="radio" class="btn-check" name="btnradio" id="btnradio2" value="4" checked >
+								<label class="btn mb-0 tag-btn" for="btnradio2">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+										<path d="M16,11 C17.66,11 18.99,9.66 18.99,8 C18.99,6.34 17.66,5 16,5 C14.34,5 13,6.34 13,8 C13,9.66 14.34,11 16,11 Z M8,11 C9.66,11 10.99,9.66 10.99,8 C10.99,6.34 9.66,5 8,5 C6.34,5 5,6.34 5,8 C5,9.66 6.34,11 8,11 Z M8,13 C5.67,13 1,14.17 1,16.5 L1,18 C1,18.55 1.45,19 2,19 L14,19 C14.55,19 15,18.55 15,18 L15,16.5 C15,14.17 10.33,13 8,13 Z M16,13 C15.71,13 15.38,13.02 15.03,13.05 C15.05,13.06 15.06,13.08 15.07,13.09 C16.21,13.92 17,15.03 17,16.5 L17,18 C17,18.35 16.93,18.69 16.82,19 L22,19 C22.55,19 23,18.55 23,18 L23,16.5 C23,14.17 18.33,13 16,13 Z"></path>
+									</svg>
+									<span>Nhà phân phối</span>
+								</label>
+							</div>
+						<% } else if (roleID==4) { %>
+							<div class="clearfix">
+								<input type="radio" class="btn-check" name="btnradio" id="btnradio2" value="5" checked >
+								<label class="btn mb-0 tag-btn" for="btnradio2">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+										<path d="M16,11 C17.66,11 18.99,9.66 18.99,8 C18.99,6.34 17.66,5 16,5 C14.34,5 13,6.34 13,8 C13,9.66 14.34,11 16,11 Z M8,11 C9.66,11 10.99,9.66 10.99,8 C10.99,6.34 9.66,5 8,5 C6.34,5 5,6.34 5,8 C5,9.66 6.34,11 8,11 Z M8,13 C5.67,13 1,14.17 1,16.5 L1,18 C1,18.55 1.45,19 2,19 L14,19 C14.55,19 15,18.55 15,18 L15,16.5 C15,14.17 10.33,13 8,13 Z M16,13 C15.71,13 15.38,13.02 15.03,13.05 C15.05,13.06 15.06,13.08 15.07,13.09 C16.21,13.92 17,15.03 17,16.5 L17,18 C17,18.35 16.93,18.69 16.82,19 L22,19 C22.55,19 23,18.55 23,18 L23,16.5 C23,14.17 18.33,13 16,13 Z"></path>
+									</svg>
+									<span>NV Nhà phân phối</span>
+								</label>
+							</div>
+						<% } else if (roleID==5) { %>
+						<div class="clearfix">
+							<input type="radio" class="btn-check" name="btnradio" id="btnradio2" value="6" checked >
+							<label class="btn mb-0 tag-btn" for="btnradio2">
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+									<path d="M16,11 C17.66,11 18.99,9.66 18.99,8 C18.99,6.34 17.66,5 16,5 C14.34,5 13,6.34 13,8 C13,9.66 14.34,11 16,11 Z M8,11 C9.66,11 10.99,9.66 10.99,8 C10.99,6.34 9.66,5 8,5 C6.34,5 5,6.34 5,8 C5,9.66 6.34,11 8,11 Z M8,13 C5.67,13 1,14.17 1,16.5 L1,18 C1,18.55 1.45,19 2,19 L14,19 C14.55,19 15,18.55 15,18 L15,16.5 C15,14.17 10.33,13 8,13 Z M16,13 C15.71,13 15.38,13.02 15.03,13.05 C15.05,13.06 15.06,13.08 15.07,13.09 C16.21,13.92 17,15.03 17,16.5 L17,18 C17,18.35 16.93,18.69 16.82,19 L22,19 C22.55,19 23,18.55 23,18 L23,16.5 C23,14.17 18.33,13 16,13 Z"></path>
+								</svg>
+								<span>Đại lý</span>
+							</label>
+						</div>
+						<% } else if (roleID==6) { %>
+						<div class="clearfix">
+							<input type="radio" class="btn-check" name="btnradio" id="btnradio2" value="7" checked >
+							<label class="btn mb-0 tag-btn" for="btnradio2">
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+									<path d="M16,11 C17.66,11 18.99,9.66 18.99,8 C18.99,6.34 17.66,5 16,5 C14.34,5 13,6.34 13,8 C13,9.66 14.34,11 16,11 Z M8,11 C9.66,11 10.99,9.66 10.99,8 C10.99,6.34 9.66,5 8,5 C6.34,5 5,6.34 5,8 C5,9.66 6.34,11 8,11 Z M8,13 C5.67,13 1,14.17 1,16.5 L1,18 C1,18.55 1.45,19 2,19 L14,19 C14.55,19 15,18.55 15,18 L15,16.5 C15,14.17 10.33,13 8,13 Z M16,13 C15.71,13 15.38,13.02 15.03,13.05 C15.05,13.06 15.06,13.08 15.07,13.09 C16.21,13.92 17,15.03 17,16.5 L17,18 C17,18.35 16.93,18.69 16.82,19 L22,19 C22.55,19 23,18.55 23,18 L23,16.5 C23,14.17 18.33,13 16,13 Z"></path>
+								</svg>
+								<span>Nhân viên đại lý</span>
+							</label>
+						</div>
+						<% } %>
+						<% if (roleID > 4) { %>
+							<div class="clearfix">
+								<input type="radio" class="btn-check" name="btnradio" id="btnradio1" value="3" >
+								<label class="btn ms-2 mb-0 tag-btn" for="btnradio1">
+									<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+										<path d="M16,11 C17.66,11 18.99,9.66 18.99,8 C18.99,6.34 17.66,5 16,5 C14.34,5 13,6.34 13,8 C13,9.66 14.34,11 16,11 Z M8,11 C9.66,11 10.99,9.66 10.99,8 C10.99,6.34 9.66,5 8,5 C6.34,5 5,6.34 5,8 C5,9.66 6.34,11 8,11 Z M8,13 C5.67,13 1,14.17 1,16.5 L1,18 C1,18.55 1.45,19 2,19 L14,19 C14.55,19 15,18.55 15,18 L15,16.5 C15,14.17 10.33,13 8,13 Z M16,13 C15.71,13 15.38,13.02 15.03,13.05 C15.05,13.06 15.06,13.08 15.07,13.09 C16.21,13.92 17,15.03 17,16.5 L17,18 C17,18.35 16.93,18.69 16.82,19 L22,19 C22.55,19 23,18.55 23,18 L23,16.5 C23,14.17 18.33,13 16,13 Z"></path>
+									</svg>
+									<span>Khách hàng</span>
+									
+								</label>
+							</div>
+						<% } %>
+					</div>
+					<div class="mb-3 form-group">
+						<div id="namex"></div>
+					</div>
+					<div class="mb-3 form-group">
+						<div id="phonex"></div>
+					</div>
+					<div class="mb-3 input-group">
+						<a href="javascript:void(0);" class="btn mt-2 btn-primary w-100 profileBtn">GỬI LỜI MỜI</a>
+					</div>
+				</form>
+                
+				<div class="mb-auto p-tb5 referralinstruction">
+				</div>
+				
+				<div class="text-center mb-auto p-tb20">
+					<p class="saprate text-soft loginmsg"></p>
+				</div>
+				
+            </div>
+        </div>
+		
+		<div id="toast"></div>	
+    </div>
+	<!-- Page Content -->
+    <div class="page-content">
+        <div class="container bottom-content shop-cart-wrapper"> 
+			<div class="dz-list">
+				<ul id="walletlist">
+				</ul>
+			</div>
+        </div>
+		<div class="footer fixed ">
+			<div class="container">
+				@@include("partials/mmenubar.html", { "activepanel": "referral"})
+			</div>
+		</div>		
+    </div>
+    <!-- Page Content End-->
+    <!-- Page Content End-->
+</div> 
+
+<div id="weburl" style="display:none"><%=weburl%></div>
+<link href="@@webRoot/node_modules/devextreme/dist/css/dx.light.css" rel="stylesheet">
+@@include("partials/mscripts.html")
+<script src="@@webRoot/node_modules/devextreme/dist/js/dx.all.js"></script>
+
+<% if (production==1) { %>
+	<script src="@@webRoot/assets/js/mreferral-min.js"></script>
+<% } else { %>
+	<script src="@@webRoot/assets/js/mreferral.js"></script>
+<% } %>
+
+
+
+
+      
+
+</html>

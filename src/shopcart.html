@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>
+        
+        .dx-toolbar.dx-popup-title {  
+            background-color:cornflowerblue !important;
+        } 
+
+        .dx-toolbar.dx-popup-bottom{
+            background-color:cornflowerblue !important;
+        }
+
+        .first-group,
+        .second-group,
+        .third-group {
+            padding: 20px;
+        }
+        .second-group {
+            background-color: rgba(191, 191, 191, 0.15);
+        }
+        .third-group {
+            background-color: rgba(177, 94, 94, 0.15);
+        }
+        .qrcode {
+            padding: 10px; 
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "navmanorders", "page": "ordersx"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="pt-10 pb-10"></div>
+            <div class="container-fluid mt-n22 px-6">
+                <div class="row mt-8">
+                    <div class="card">
+                        <div class="row mx-md-n5">
+                            <div class="col-1 px-md-2">
+                                <div class="p-3 ">
+                                    <a href="javascript:history.back()" class="align-items-end">
+                                        <img class="align-items-center" src="/public/goback.png" width="90" height="80">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-5 px-md-2">
+                                <div class="p-3 border bg-light">
+                                    <h5 id="dateaddedx"></h5>
+                                    <h5 id="customerx"></h5>
+                                    <h5 id="phonex"></h5>
+                                    <div class="d-flex">
+                                        <input class="form-check-input" type="checkbox" id="incltax" name="incltax" <%=incltaxx==1?'checked':''%> >
+                                        <label class="form-check-label incltax"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 px-md-2">
+                                <div class="p-3 border bg-light d-flex flex-column align-items-end">
+                                    <h5 id="lastchangedx"></h5>
+                                    <h5 id="amountx"></h5>
+                                    <h5 id="taxx"></h5>
+                                    <h5 id="totalx"></h5>
+                                </div>
+                            </div>
+                            <div class="col-1 px-md-2">
+                                <div class="p-3 ">
+                                    <button class="printrx" style="border: none;">
+                                        <img class="align-items-center" src="/public/printer.png" width="75" height="75">
+                                    </button>
+                                </div>
+                            </div>
+                          </div>
+                    </div> 
+                </div>
+                <div class="row mt-2">
+                    <div class="card">
+                        <div class="dx-viewport">
+                            <div id="profileContainer" class="mt-2"></div>
+                        </div>
+                    </div> 
+                </div>
+                <div id="toast"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src='@@webRoot/assets/js/webbluetooth-receipt-printer.umd.js'></script>
+    <script src='@@webRoot/assets/js/webusb-receipt-printer.umd.js'></script>
+    <script src='@@webRoot/assets/js/receipt-printer-encoder.umd.js'></script>
+    
+    @@include("partials/scripts.html")
+    
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/shopcart-min.js"></script>
+    <% } else { %>
+        <script src="@@webRoot/assets/js/shopcart.js"></script>
+    <% } %>
+    
+    <div id="saleID" style="display:none"><%=saleID%></div>
+    <div id="saleno" style="display:none"><%=saleno%></div>
+    <div id="customerName" style="display:none"><%=customerName%></div>
+    <div id="phone" style="display:none"><%=phonex%></div>
+    <div id="dateadded" style="display:none"><%=dateaddedx%></div>
+    <div id="lastchanged" style="display:none"><%=lastchangedx%></div>
+    <div id="amount" style="display:none"><%=amountx%></div>
+    <div id="tax" style="display:none"><%=taxx%></div>
+    <div id="sxname" style="display:none"><%=sxname%></div>
+    <div id="sxaddress" style="display:none"><%=sxaddress%></div>
+    <div id="hotline" style="display:none"><%=hotline%></div>
+    <div id="sxemail" style="display:none"><%=sxemail%></div>
+    <div id="subdir" style="display:none"><%=subdir%></div>
+    <div id="logox" style="display:none"><%=logox%></div>
+    <div id="abn" style="display:none"><%=abn%></div>
+    <div id="license" style="display:none"><%=license%></div>
+    <div id="statusx" style="display:none"><%=statusx%></div>
+    <div id="incltaxx" style="display:none"><%=incltaxx%></div>
+
+
+
+
+
+</body>
+
+</html>

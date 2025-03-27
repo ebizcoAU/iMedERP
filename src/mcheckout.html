@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include("partials/mhead.html")
+    <style>
+        
+        #toast {
+            min-width: 250px; /* Set a default minimum width */
+            margin-left: 0px; /* Divide value of min-width by 2 */
+            color: #333333; /* Black text color */
+            text-align: center; /* Centered text */
+            border-radius: 2px; /* Rounded borders */
+            padding: 16px; /* Padding */
+            position: sticky; 
+            z-index: 1000; /* Add a z-index if needed */
+            top: 0%;
+            left: 50%; /* Center the snackbar */
+			bottom: 60%;
+        }
+    </style>
+    
+</head>   
+<body data-theme-color="color-primary">
+<div class="page-wraper">
+    
+    <!-- Preloader -->
+    <div id="preloader">
+		<div class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+    <!-- Preloader end-->
+	
+	<!-- Header -->
+    <header class="header">
+		<div class="main-bar">
+			<div class="container">
+				<div class="header-content">
+					<div class="left-content">
+						<a href="javascript:void(0);" class="back-btn">
+							<svg height="512" viewBox="0 0 486.65 486.65" width="512">
+								<path d="m202.114 444.648c-8.01-.114-15.65-3.388-21.257-9.11l-171.875-171.572c-11.907-11.81-11.986-31.037-.176-42.945.058-.059.117-.118.176-.176l171.876-171.571c12.738-10.909 31.908-9.426 42.817 3.313 9.736 11.369 9.736 28.136 0 39.504l-150.315 150.315 151.833 150.315c11.774 11.844 11.774 30.973 0 42.817-6.045 6.184-14.439 9.498-23.079 9.11z"/>
+								<path d="m456.283 272.773h-425.133c-16.771 0-30.367-13.596-30.367-30.367s13.596-30.367 30.367-30.367h425.133c16.771 0 30.367 13.596 30.367 30.367s-13.596 30.367-30.367 30.367z"/>
+							</svg>
+						</a>
+                        <h5 class="title mb-0 text-nowrap" id="pagetitle"></h5>
+					</div>
+					<div class="mid-content"></div>
+					<div class="right-content pe-2" >
+						<% if ((roleID != 3) && (roleID != 4) && (roleID != 6)  && (roleID != 7)) { %>
+							<a href="/midscanner" class="px-2" id="qrcodeBtn">						
+								<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 115.7">
+									<path d="M7.48,19.05a3.74,3.74,0,0,1-7.48,0V3.74A3.75,3.75,0,0,1,3.74,0l.34,0H25.15a3.73,3.73,0,1,1,0,7.45H7.48V19.05Zm9.34,13.4c21.83-27,47-41.63,65.87-17.64,21.7,1.14,31,34.08,16.07,50.33a5.85,5.85,0,0,1,3,.68l.15.09a5.09,5.09,0,0,1,2.29,3,10,10,0,0,1-.19,5.5l-.07.22c-.27.8-.51,1.82-.75,2.88-1,4.33-2.1,9.1-7,8.84a5.16,5.16,0,0,1-.79-.09c-.19,9-4.58,13.11-10.32,18.51l-2.21,2.09c-5.81,5.6-12.17,8.32-18.63,8.33S51,112.36,44.9,106.92L42.74,105c-5.63-4.84-10.33-8.89-11.22-18.76H31a6.71,6.71,0,0,1-3.31-.87c-2.31-1.31-3.56-3.81-4.17-6.66a32.9,32.9,0,0,1-.14-10.63,2.12,2.12,0,0,1,.13-.51c.81-2.26,1.83-3.48,3.1-4-.58-10.77,1.24-27.82-9.81-31.16Zm63,2.55a23.13,23.13,0,0,1-15.42,6.91c-1.52.27-3,.45-4.48.63-4.95.61-9.89,1.22-16.44,5.75A15.8,15.8,0,0,0,37.22,56a19.46,19.46,0,0,0-.3,10.71,2.17,2.17,0,0,1-2.83,2.62l-2.5-.92c-2.05-.71-3.33-1-3.94.51a28.43,28.43,0,0,0,.12,8.9c.38,1.74,1,3.2,2.07,3.8a2.47,2.47,0,0,0,1.23.31,5.93,5.93,0,0,0,1.77-.29,2.27,2.27,0,0,1,.65-.12,2.17,2.17,0,0,1,2.21,2.11c.23,9.8,4.58,13.55,9.87,18.1l2.21,1.92c5.31,4.73,10.9,7.17,16.38,7.17s10.66-2.33,15.63-7.13L82,101.6c5.55-5.22,9.64-9.06,8.85-18.41a2.24,2.24,0,0,1,.36-1.38,2.17,2.17,0,0,1,3-.61,5.14,5.14,0,0,0,1.16.6,3.27,3.27,0,0,0,.93.21c1.32.07,2-2.84,2.6-5.49a32.31,32.31,0,0,1,.88-3.31,5.91,5.91,0,0,0,.21-3,.9.9,0,0,0-.32-.51l-.06,0a2,2,0,0,0-1.1-.14,7.67,7.67,0,0,0-3.68,1.63A2.16,2.16,0,0,1,91.42,69c2-11.9,1.11-19.66-1.43-24.94-2.22-4.64-5.76-7.44-9.6-9.54l-.62.47ZM57.36,57.9c2.33.87,2.82,2.81,1.52,3.54-1.53.86-3.45-.42-4.94-.9-3.89-1.24-8.51-1.38-11.86.72a18,18,0,0,0-2.73,2.16A9.5,9.5,0,0,1,41,60.08c3.38-4.25,11.86-4.5,16.36-2.18Zm-12.1,8.33a.93.93,0,0,1-1.21-.68,1.12,1.12,0,0,1,.59-1.38,16,16,0,0,1,11.59,0,1.11,1.11,0,0,1,.62,1.36.92.92,0,0,1-1.19.7,17.29,17.29,0,0,0-1.91-.57,2.91,2.91,0,0,1,.1.72,2.69,2.69,0,0,1-5.37,0,2.63,2.63,0,0,1,.2-1,14,14,0,0,0-3.42.88ZM70.14,57.9c-2.33.87-2.82,2.81-1.52,3.54,1.53.86,3.45-.42,4.94-.9,3.89-1.24,8.5-1.38,11.86.72a18,18,0,0,1,2.73,2.16,9.5,9.5,0,0,0-1.65-3.34c-3.38-4.25-11.86-4.5-16.36-2.18Zm4.35,7.52a2.77,2.77,0,0,0-.18,1,2.69,2.69,0,0,0,5.37,0,2.61,2.61,0,0,0-.28-1.19,16.93,16.93,0,0,1,3.54.78.93.93,0,0,0,1.18-.75,1.13,1.13,0,0,0-.65-1.35,18.67,18.67,0,0,0-5.8-.94,18,18,0,0,0-5.72,1,1.14,1.14,0,0,0-.66,1.35,1,1,0,0,0,1.18.74,17.36,17.36,0,0,1,2-.55ZM59.27,87.16a1.63,1.63,0,0,1,2.09-2.5,3.75,3.75,0,0,0,2.35,1,3.82,3.82,0,0,0,2.45-1.06,1.61,1.61,0,0,1,2.28.22,1.63,1.63,0,0,1-.22,2.28,7,7,0,0,1-4.56,1.79,6.64,6.64,0,0,1-4.39-1.78ZM54.42,97.23a1.71,1.71,0,1,1,1.59-3,16.69,16.69,0,0,0,7.79,2.13,15.67,15.67,0,0,0,7.66-2.11,1.71,1.71,0,1,1,1.66,3,18.73,18.73,0,0,1-9.31,2.51,20.12,20.12,0,0,1-9.39-2.51Zm61-.58a3.74,3.74,0,1,1,7.48,0V112a3.75,3.75,0,0,1-3.74,3.74l-.34,0H97.73a3.73,3.73,0,1,1,0-7.45H115.4V96.65Zm7.48-77.6a3.74,3.74,0,1,1-7.48,0V7.47H97.73a3.73,3.73,0,1,1,0-7.45H118.8l.34,0a3.75,3.75,0,0,1,3.74,3.74V19.05ZM0,96.65a3.74,3.74,0,0,1,7.48,0v11.58H25.15a3.73,3.73,0,1,1,0,7.45H4.08l-.34,0A3.75,3.75,0,0,1,0,112V96.65Z" fill="#777"/>
+								</svg>
+							</a>
+						<% } %>
+						<a href="/mshopcartlist" class="pe-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 456.569 456.569">
+								<path d="M345.805 339.465c-29.323-.028-53.117 23.72-53.146 53.043s23.72 53.117 53.043 53.146 53.117-23.72 53.146-53.043v-.051c-.028-29.292-23.752-53.038-53.043-53.095zm94.171-254.244a20.44 20.44 0 0 0-3.855-.373H112.845l-5.12-34.253c-3.19-22.748-22.648-39.673-45.619-39.68H20.48C9.169 10.915 0 20.084 0 31.395s9.169 20.48 20.48 20.48h41.677a5.12 5.12 0 0 1 5.12 4.506l31.539 216.166c4.324 27.468 27.951 47.732 55.757 47.821h213.043c26.771.035 49.866-18.78 55.245-45.005l33.331-166.144c2.149-11.105-5.111-21.849-16.216-23.998zM215.737 390.286c-1.247-28.463-24.737-50.869-53.228-50.77h0c-29.299 1.184-52.091 25.896-50.907 55.195 1.136 28.113 24.005 50.458 52.136 50.943h1.28c29.295-1.284 52.002-26.073 50.719-55.368z" fill="#777"/>
+							</svg>
+                        </a>
+                        <a href="javascript:void();" id="removeorder" class="px-2">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24" height="24"  fill="#888" viewBox="0 0 109.484 122.88" enable-background="new 0 0 109.484 122.88" xml:space="preserve">
+                                <g><path fill-rule="evenodd" clip-rule="evenodd" d="M2.347,9.633h38.297V3.76c0-2.068,1.689-3.76,3.76-3.76h21.144 c2.07,0,3.76,1.691,3.76,3.76v5.874h37.83c1.293,0,2.347,1.057,2.347,2.349v11.514H0V11.982C0,10.69,1.055,9.633,2.347,9.633 L2.347,9.633z M8.69,29.605h92.921c1.937,0,3.696,1.599,3.521,3.524l-7.864,86.229c-0.174,1.926-1.59,3.521-3.523,3.521h-77.3 c-1.934,0-3.352-1.592-3.524-3.521L5.166,33.129C4.994,31.197,6.751,29.605,8.69,29.605L8.69,29.605z M69.077,42.998h9.866v65.314 h-9.866V42.998L69.077,42.998z M30.072,42.998h9.867v65.314h-9.867V42.998L30.072,42.998z M49.572,42.998h9.869v65.314h-9.869 V42.998L49.572,42.998z"/></g>
+                            </svg>
+                        </a> 
+						<a href="javascript:location.reload();"  class="text-dark font-24">
+                            <svg width="22" height="22" viewBox="0 0 32 32" fill="#666">
+                                <path d="M28,16c-1.219,0-1.797,0.859-2,1.766C25.269,21.03,22.167,26,16,26c-5.523,0-10-4.478-10-10S10.477,6,16,6  c2.24,0,4.295,0.753,5.96,2H20c-1.104,0-2,0.896-2,2s0.896,2,2,2h6c1.104,0,2-0.896,2-2V4c0-1.104-0.896-2-2-2s-2,0.896-2,2v0.518  C21.733,2.932,18.977,2,16,2C8.268,2,2,8.268,2,16s6.268,14,14,14c9.979,0,14-9.5,14-11.875C30,16.672,28.938,16,28,16z"/>
+                            </svg>
+                        </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+    <!-- Header End -->
+    
+    <!-- Page Content -->
+	<div class="page-content">
+        <div class="container bottom-content"> 
+					
+					<div class="mb-1 input-group input-group-icon">
+						<div class="form-item">
+							<div class="d-flex">
+								<div id="searchBox"></div>
+								<button class="btn btn-primary addBtn btn-sm ms-2">
+									<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"  fill="white"  viewBox="0 0 24 24" id="plus">
+										<path d="M19,11H13V5a1,1,0,0,0-2,0v6H5a1,1,0,0,0,0,2h6v6a1,1,0,0,0,2,0V13h6a1,1,0,0,0,0-2Z"></path>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="mb-1 input-group input-group-icon">
+						<div class="form-item">
+							<span class="form-label title-head" id="namexTxt"></span>
+							<div class="d-flex">
+								<input type="text" class="form-control" id="namex" disabled>
+								<button class="btn btn-primary editBtn btn-sm ms-2">
+									<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"  fill="white"  viewBox="0 0 24 24" id="plus">
+										<path  d="M21,12a1,1,0,0,0-1,1v6a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V5A1,1,0,0,1,5,4h6a1,1,0,0,0,0-2H5A3,3,0,0,0,2,5V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V13A1,1,0,0,0,21,12ZM6,12.76V17a1,1,0,0,0,1,1h4.24a1,1,0,0,0,.71-.29l6.92-6.93h0L21.71,8a1,1,0,0,0,0-1.42L17.47,2.29a1,1,0,0,0-1.42,0L13.23,5.12h0L6.29,12.05A1,1,0,0,0,6,12.76ZM16.76,4.41l2.83,2.83L18.17,8.66,15.34,5.83ZM8,13.17l5.93-5.93,2.83,2.83L10.83,16H8Z"></path>
+									</svg>
+								</button>
+							</div>
+							
+						</div>
+					</div>
+					<div class="d-flex justify-content-between align-items-center">
+						<div class="mb-3 me-3 input-group input-group-icon">
+							<div class="form-item">
+								<span class="form-label title-head" id="dobxTxt"></span>
+								<input type="text" class="form-control" id="dobx" disabled>
+							</div>
+						</div>
+						<div class="mb-3 input-group input-group-icon">
+							<div class="form-item">
+								<span class="form-label title-head" id="phonexTxt"></span>
+								<input type="text" class="form-control" id="phonex" disabled>
+							</div>
+						</div>
+					</div>
+					<div class="mb-1 input-group input-group-icon">
+						<div class="form-item">
+							<span class="form-label title-head" id="salemanTxt"></span>
+							<input type="text" class="form-control" id="saleman" disabled>
+						</div>
+					</div>
+					<div class="d-flex justify-content-between">
+						<div class="mb-1 me-1 input-group input-group-icon">
+							<div class="form-item">
+								<span class="form-label title-head" id="subtotalTxt"></span>
+								<input type="text" class="form-control" style="text-align:right;" id="subtotal" disabled>
+							</div>
+						</div>
+						<div class="mb-1 me-1 input-group input-group-icon">
+							<div class="form-item">
+								<span class="form-label title-head" id="taxTxt"></span>
+								<input type="text" class="form-control" style="text-align:right;" id="tax" disabled>
+							</div>
+						</div>
+						<div class="mb-1 me-1 input-group input-group-icon">
+							<div class="form-item">
+								<span class="form-label title-head" id="totalTxt"></span>
+								<input type="text" class="form-control" style="text-align:right;" id="total" disabled>
+							</div>
+						</div>
+					</div>
+					<div class="mb-1 input-group input-group-icon">
+						<div class="form-item">
+							<div class="media media-110 me-3 bg-dark" id="prescriptionimg"></div>	
+						</div>
+					</div>
+					<div class="d-flex align-items-center mb-3">
+						<!-- Card Select -->
+						<div class="short-tag style-3" role="group" aria-label="radio toggle button">
+							<div class="clearfix">
+								<input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked="" value="0">
+								<label class="btn ms-2 mb-0 tag-btn" for="btnradio1">
+									<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 48 48" id="cash">
+										<path fill="#333" fill-rule="evenodd" d="M10.4894 32V36C10.4894 37.1046 11.3848 38 12.4894 38H42.4894C43.5939 38 44.4894 37.1046 44.4894 36V20C44.4894 18.8954 43.5939 18 42.4894 18H40V21.6687C40.108 21.8295 40.2315 21.9798 40.3692 22.1174 40.6477 22.396 40.9785 22.617 41.3424 22.7677 41.7061 22.9184 42.0958 22.9959 42.4894 22.9961V33C42.1013 33.0023 41.7174 33.0798 41.3588 33.2284 40.9948 33.3791 40.6641 33.6001 40.3855 33.8787 40.1069 34.1573 39.886 34.488 39.7352 34.8519 39.5844 35.2159 39.5068 35.606 39.5068 36H15.4852C15.4804 35.6188 15.403 35.2419 15.2571 34.8895 15.1063 34.5256 14.8853 34.1949 14.6067 33.9163 14.3282 33.6377 13.9975 33.4167 13.6335 33.266 13.2707 33.1157 12.882 33.0381 12.4894 33.0376V32H10.4894zM21 22C22.1046 22 23 21.1046 23 20 23 18.8954 22.1046 18 21 18 19.8954 18 19 18.8954 19 20 19 21.1046 19.8954 22 21 22zM21 24C23.2091 24 25 22.2091 25 20 25 17.7909 23.2091 16 21 16 18.7909 16 17 17.7909 17 20 17 22.2091 18.7909 24 21 24z" clip-rule="evenodd"></path>
+										<path fill="#333" fill-rule="evenodd" d="M6 10C4.89543 10 4 10.8954 4 12V28C4 29.1046 4.89543 30 6 30H36C37.1046 30 38 29.1046 38 28V12C38 10.8954 37.1046 10 36 10H6ZM8.99817 12H33.0011C33.0016 12.3926 33.0792 12.7814 33.2295 13.1441C33.3802 13.5081 33.6012 13.8388 33.8798 14.1174C34.1584 14.396 34.4891 14.617 34.853 14.7677C35.2167 14.9184 35.6064 14.9959 36 14.9961V25.0001C35.612 25.0023 35.228 25.0798 34.8694 25.2284C34.5054 25.3791 34.1747 25.6001 33.8961 25.8787C33.6176 26.1573 33.3966 26.488 33.2458 26.8519C33.0951 27.2159 33.0175 27.606 33.0175 28H8.99581C8.99103 27.6188 8.91365 27.2419 8.76768 26.8895C8.61692 26.5256 8.39594 26.1949 8.11737 25.9163C7.83879 25.6377 7.50807 25.4167 7.1441 25.266C6.78134 25.1157 6.39262 25.0381 6 25.0376L6 15C6.39334 14.9998 6.78281 14.9222 7.14622 14.7716C7.5102 14.6209 7.84091 14.3999 8.11949 14.1213C8.39807 13.8427 8.61904 13.512 8.76981 13.1481C8.92057 12.7841 8.99817 12.394 8.99817 12Z" clip-rule="evenodd"></path>
+									</svg>
+									<span id="paycash"></span>
+								</label>
+							</div>
+							<div class="clearfix">
+								<input type="radio" class="btn-check" name="btnradio" id="btnradio3" value="1">
+								<label class="btn mb-0 me-0 tag-btn" for="btnradio3">
+									<svg width="32" height="32" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+											<polygon points="3.99,45.7 20.02,45.7 20.02,41.73 3.99,41.73 3.99,34.42 0,34.42 0,54.01 3.99,54.01 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+											<polygon points="12.57,55.55 29.32,55.55 29.32,45.7 38.69,45.7 38.69,41.73 25.33,41.73 25.33,51.58 12.57,51.58 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+											<polygon points="38.63,61.02 34.64,61.02 34.64,80.09 42.87,80.09 42.87,86.03 34.64,86.03 34.64,90 46.86,90 46.86,76.11 38.63,76.11 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+											<polygon points="50.87,14.99 54.86,14.99 54.86,0 39.75,0 39.75,3.97 50.87,3.97 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+											<polygon points="41.82,26 34.64,26 34.64,29.98 45.81,29.98 45.81,7.7 34.64,7.7 34.64,11.67 41.82,11.67 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+											<rect x="34.51" y="17.01" rx="0" ry="0" width="3.99" height="3.65" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) "/>
+											<polygon points="75.84,71.69 86.01,71.69 86.01,86.03 69.86,86.03 69.86,90 90,90 90,67.72 75.84,67.72 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+											<polygon points="36.51,38.23 59.64,38.23 59.64,44.42 54.89,44.42 54.89,48.4 63.63,48.4 63.63,34.26 36.51,34.26 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+											<polygon points="59.64,53.73 59.64,73.44 63.63,73.44 63.63,64.31 71.24,64.31 71.24,60.33 63.63,60.33 63.63,53.73 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+											<rect x="86.01" y="34.42" rx="0" ry="0" width="3.99" height="9.21" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) "/>
+											<polygon points="80.81,34.42 69.62,34.42 69.62,38.39 76.82,38.39 76.82,49.76 69.62,49.76 69.62,53.73 86.01,53.73 86.01,63.09 90,63.09 90,49.76 80.81,49.76 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+											<polygon points="51.87,81.43 58.27,81.43 58.27,90 62.26,90 62.26,81.43 68.66,81.43 68.66,77.45 51.87,77.45 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+											<rect x="50.87" y="22.2" rx="0" ry="0" width="3.99" height="5.79" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) "/>
+											<polygon points="54.93,58.13 54.93,54.16 48.85,54.16 48.85,41.73 44.86,41.73 44.86,70.7 54.21,70.7 54.21,66.72 48.85,66.72 48.85,58.13 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+											<path d="M 30.081 0 H 0 v 29.979 h 30.081 V 0 z M 26.093 26.005 H 3.988 V 3.974 h 22.106 V 26.005 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+											<rect x="13.05" y="13" rx="0" ry="0" width="3.99" height="3.98" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) "/>
+											<path d="M 0 90 h 30.081 V 60.021 H 0 V 90 z M 3.988 63.995 h 22.106 v 22.03 H 3.988 V 63.995 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+											<rect x="13.05" y="73.02" rx="0" ry="0" width="3.99" height="3.98" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) "/>
+											<path d="M 59.919 0 v 29.979 H 90 V 0 H 59.919 z M 86.012 26.005 H 63.907 V 3.974 h 22.106 V 26.005 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+											<rect x="72.97" y="13" rx="0" ry="0" width="3.99" height="3.98" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) "/>
+											<rect x="8.97" y="34.26" rx="0" ry="0" width="3.99" height="3.98" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) "/>
+											<rect x="25.13" y="34.26" rx="0" ry="0" width="3.99" height="3.98" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) "/>
+											<rect x="34.51" y="51.74" rx="0" ry="0" width="3.99" height="3.98" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) "/>
+											<rect x="77.66" y="57.11" rx="0" ry="0" width="3.99" height="3.98" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) "/>
+											<rect x="75.55" y="76.87" rx="0" ry="0" width="3.99" height="3.98" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) "/>
+										</g>
+										<defs>
+										<clipPath id="clip0_364_194">
+										<rect width="32" height="32" fill="white"/>
+										</clipPath>
+										</defs>
+									</svg>
+									<span id="banktransfer"></span>
+								</label>
+							</div>
+							<div class="clearfix">
+								<input type="radio" class="btn-check" name="btnradio" id="btnradio1"  value="2">
+								<label class="btn ms-2 mb-0 tag-btn" for="btnradio1">
+									<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M18.8125 0C14.16 0 10.375 3.785 10.375 8.4375C10.375 13.09 14.16 16.875 18.8125 16.875C23.465 16.875 27.25 13.09 27.25 8.4375C27.25 3.785 23.465 0 18.8125 0ZM18.8125 13.125C17.8112 13.125 16.8781 12.5862 16.3769 11.7194C16.1175 11.2712 16.2706 10.6975 16.7188 10.4388C17.1669 10.1794 17.7406 10.3325 18 10.7806C18.1675 11.07 18.4788 11.25 18.8125 11.25C19.3294 11.25 19.75 10.8294 19.75 10.3125C19.75 9.79562 19.3294 9.375 18.8125 9.375C17.2619 9.375 16 8.11312 16 6.5625C16 5.01188 17.2619 3.75 18.8125 3.75C19.8138 3.75 20.7469 4.28875 21.2481 5.15562C21.5075 5.60375 21.3544 6.1775 20.9062 6.43687C20.4575 6.69562 19.8844 6.5425 19.625 6.09438C19.4575 5.805 19.1462 5.625 18.8125 5.625C18.2956 5.625 17.875 6.04562 17.875 6.5625C17.875 7.07938 18.2956 7.5 18.8125 7.5C20.3631 7.5 21.625 8.76188 21.625 10.3125C21.625 11.8631 20.3631 13.125 18.8125 13.125Z" fill="#7D8FAB"/>
+										<path d="M1 21.6875V29.1875C1 29.7052 1.41975 30.125 1.9375 30.125H3.8125C4.33025 30.125 4.75 29.7052 4.75 29.1875V20.75H1.9375C1.41975 20.75 1 21.1697 1 21.6875Z" fill="#7D8FAB"/>
+										<path d="M29.125 20.9137C28.6562 20.9137 28.2281 21.0856 27.8994 21.37L22.5306 26.375H16V24.5H21.3125C22.3481 24.5 23.1875 23.6606 23.1875 22.625C23.1875 21.5894 22.3481 20.75 21.3125 20.75H16.9375C15.7425 19.555 14.3837 18.875 12.6737 18.875C9.82687 18.875 10.0838 20.7313 6.625 20.75V28.55C11.5206 29.2062 13.6525 32 17.6144 32C22.9662 32 24.0338 30.0806 30.4013 24.1625C30.7694 23.82 31 23.3312 31 22.7887C31 21.7531 30.1606 20.9137 29.125 20.9137Z" fill="#7D8FAB"/>
+									</svg>
+									<span id="cashondelivery"></span>
+								</label>
+							</div>
+							
+						</div>
+					</div>
+
+					<div class="input-group">
+						<a href="javascript:void(0);" class="btn mt-2 btn-primary w-100 submitBtn"></a>
+					</div>
+			
+		</div>
+		
+	</div>
+
+	<div id="toast"></div>	
+</div>
+
+
+@@include("partials/mscripts.html")
+<script src="@@webRoot/assets/vendor/jquery-steps/js/jquery.steps.min.js"></script>
+
+<% if (production==1) { %>
+	<script src="@@webRoot/assets/js/mcheckout-min.js"></script>
+	<script src="@@webRoot/assets/js/localsrc-min.js"></script>
+<% } else { %>
+	<script src="@@webRoot/assets/js/mcheckout.js"></script>
+	<script src="@@webRoot/assets/js/localsrc.js"></script>
+<% } %>
+
+</body>
+</html>

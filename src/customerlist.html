@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>iHMS</title>
+    <style>
+        #propertyContainer {
+            height: 22vh;
+        }
+        
+        .dx-toolbar.dx-popup-title {  
+            background-color: rgb(170, 194, 244);  
+        } 
+
+        .dx-toolbar.dx-popup-bottom{
+            background-color: rgb(170, 194, 244); 
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "contact", "page": "customerlist"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="pt-10 pb-10"></div>
+            <div class="container-fluid mt-n22 px-6">
+                <div class="row mt-8">
+                    <div class="card">
+                        <!-- card header  -->
+                        <div class="card-header bg-grey mt-2 py-2">
+                            <div class="mb-0 h4" id="header1"></div>
+                        </div>
+                        <div class="dx-viewport">
+                            <div id="operatorContainer"></div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="row mt-2">
+                    <div class="card">
+                        <div class="card-header bg-grey mt-2 py-2">
+                            <h4 class="mb-0" id="header2"></h4>
+                        </div>
+                        <div class="dx-viewport">
+                            <div id="propertyContainer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+    <script src="@@webRoot/assets/js/customerlist.js"></script>
+
+
+
+</body>
+
+</html>

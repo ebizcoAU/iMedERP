@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>
+        
+        .dx-toolbar.dx-popup-title {  
+            background-color:cornflowerblue !important;
+        } 
+
+        .dx-toolbar.dx-popup-bottom{
+            background-color:cornflowerblue !important;
+        }
+
+        .first-group,
+        .second-group {
+            padding: 20px;
+        }
+        .second-group {
+            background-color: rgba(191, 191, 191, 0.15);
+        }
+
+        .dx-toast-content {
+            min-width: 300px;
+            max-width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "prescriptman", "page": "symptom"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="pt-10 pb-10"></div>
+            <div class="container-fluid mt-n22 px-">
+                <div class="row mt-7">
+                    <div class="card">
+                        <div class="dx-viewport">
+                            <div id="profileContainer" class="mt-2 mx-2"></div>
+                        </div>
+                    </div> 
+                </div>
+                <div id="toast"></div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/symptom-min.js"></script>
+    <% } else { %>
+        <script src="@@webRoot/assets/js/symptom.js"></script>
+    <% } %>
+    
+    
+
+</body>
+
+</html>

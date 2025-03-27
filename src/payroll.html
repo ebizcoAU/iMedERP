@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>       
+
+        #listContainer {
+            height: 954px; 
+        }
+        .checkboxes-mode {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+        #payrollContainer {
+            height: 420px; 
+        }
+        #payrollItemContainer {
+            height: 480px; 
+        }
+
+        .message-content {
+            background-color: #fff;
+            min-height: 50vh; 
+            padding: 10px 5px 5px 5px;
+            color: #111111;
+            font-weight: 400;
+        }
+                    
+    </style>
+</head>
+
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "finactivity", "page": "payroll"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="pt-20 pb-5"></div>
+            <div class="container-fluid mt-n22 px-6">
+                <div class="row">
+                    <div class="col-xl-2 col-lg-3 col-md-12 col-12 mt-2">
+                        <!-- card -->
+                        <div class="card">
+                            <!-- card body -->
+                                <div class="d-flex flex-column mb-1 mt-2 ">
+                                    <div class="media media-110" style="text-align: center;">
+                                        <img id="staffimgx" width="140" height="140" style="object-fit:contain"/>
+                                    </div>
+                                    <div class="pt-2 mt-2" id="searchBox"></div> 
+                                </div>
+                        </div>
+                        
+                        <div class="card message-content">
+                            <div class="container chat-box-area bottom-content" id="cardbody">
+                                
+                            </div>
+                        </div>
+                        <!-- Footer -->
+                        <footer class="footer border-0 fixed"></footer>
+                    </div>
+                    <div class="col-xl-10 col-lg-9 col-md-12 col-12">
+                        <!-- card -->
+                            <!-- card body -->
+                            <div class="card-body shadow-lg p-3  rounded dx-viewport">
+                                <div class=" mb-2 ">
+                                    <div id="payrollContainer" class=""></div>
+                                </div>
+                                
+                                <div>
+                                    <div id="payrollItemContainer" class="mt-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div id="toast"></div>
+                
+               
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/payroll-min.js"></script>
+    <% } else { %>
+        <script src="@@webRoot/assets/js/payroll.js"></script>
+    <% } %>
+    
+    
+
+
+
+</body>
+
+</html>

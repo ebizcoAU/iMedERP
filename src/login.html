@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="AntiFake &amp; Product Authentication and Distribution Management System">
+	<meta name="author" content="eBizCoAU">
+	<meta name="keywords" content="Product Authentication and Distribution Management System">
+
+	<link rel="shortcut icon" href="assets/images/icons/icon-48x48.png" />
+
+	<title>AntiFake - Login</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<main class="d-flex w-80 bg-primary">
+		<div class="container d-flex flex-column">
+			<div class="row vh-100">
+				<div class="col-sm-8 col-md-6 col-lg-4 mx-auto d-table h-100">
+					<div class="d-table-cell align-middle">
+						<div class="card">
+							<div class="card-body">
+								<div class="m-sm-4">
+									<div class="text-center mt-4">
+										<img src="assets/images/icons/logo2.png" alt="AntiFake" width="200" height="64" />
+									</div>
+									<form id="loginForm2" onKeyPress="return checkSubmit(event, '#login_form2')">
+										<div class="mb-3">
+											<label class="form-label">Điện thoại/Email</label>
+											<input class="form-control form-control-md" type="text" name="username2" id="username2" placeholder="Enter your username or email" />
+										</div>
+										<div class="mb-3">
+											<label class="form-label">Mật mã</label>
+											<input class="form-control form-control-md" type="password" name="password2" id="password2" placeholder="Enter your password" />
+											<small>
+												<a href="#" class="reset_pwd2">Quên mật mã?</a>
+											</small>
+										</div>
+										<span id="logintxt2" class="text-danger"></span>
+										<div class="text-center mt-3">
+											<a href="#" class="btn btn-lg btn-primary login2"><i class="align-middle fa-2x me-2" data-feather="log-out"></i>Nhập &nbsp;</a>
+											<!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<!-- Bootstrap core JavaScript-->
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
+  
+	<!-- Custom scripts for all pages-->
+  
+	
+	<% if (production==1) { %>
+        <script src="@@webRoot/assets/js/login-min.js"></script>
+    <% } else { %>
+        <script src="@@webRoot/assets/js/login.js"></script>
+    <% } %>
+
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>
+        
+        #pivotgrid {
+            margin-top: 10px;
+        }
+
+        .dx-pivotgrid .dx-pivotgrid-expanded .dx-expand {
+            font: 18px/18px DXIcons;
+            text-align: center;
+            color: #666666;
+        }
+
+        .dx-pivotgrid .dx-area-description-cell,
+        .dx-pivotgrid .dx-column-header,
+        .dx-pivotgrid .dx-data-header,
+        .dx-pivotgrid .dx-total {
+            background-color: #f0f0f0;
+        }
+        .dx-pivotgrid .dx-grandtotal {
+            background-color: #e0e0e0;
+        }
+
+       
+    </style>
+</head>
+
+
+  
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "finactivity", "page": "accountlist"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="bg-blue pt-20 pb-5"></div>
+            <div class="container-fluid mt-n22 px-6 dx-viewport">
+                <!-- card  -->
+                <div class="card" >
+                    <div class="mt-2 mb-2 mx-2 ">
+                        <div id="profileContainer"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="toast"></div>
+        </div>
+    </div>
+    
+
+
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/accountlist-min.js"></script>
+
+    <% } else { %>
+        <script src="@@webRoot/assets/js/accountlist.js"></script>
+
+    <% } %>
+
+
+</body>
+
+</html>

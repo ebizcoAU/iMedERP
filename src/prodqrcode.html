@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>
+        
+        .dx-toolbar.dx-popup-title {  
+            background-color:cornflowerblue !important;
+        } 
+
+        .dx-toolbar.dx-popup-bottom{
+            background-color:cornflowerblue !important;
+        }
+
+        .first-group,
+        .second-group,
+        .third-group {
+            padding: 20px;
+        }
+        .second-group {
+            background-color: rgba(191, 191, 191, 0.15);
+        }
+        .third-group {
+            background-color: rgba(177, 94, 94, 0.15);
+        }
+       
+
+
+    </style>
+</head>
+
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "manman", "page": "prodman"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="pt-10 pb-10"></div>
+            <div class="container-fluid mt-n22 px-6">
+                <div class="row mt-8">
+                    <div class="card">
+                        <div class="row mx-md-n5">
+                            <div class="col-1 px-md-2">
+                                <div class="p-3 ">
+                                    <a href="/prodman" class="align-items-end">
+                                        <img class="align-items-center" src="/public/goback.png" width="90" height="80">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col px-md-2">
+                                <div class="p-3 border bg-light">
+                                    <h4 id="prodmanidx"></h4>
+                                    <h4 id="batchnumx"></h4>
+                                    <h4 id="productnamex"></h4>
+                                </div>
+                            </div>
+                            <div class="col px-md-2">
+                                <div class="p-3 border bg-light">
+                                    <h4 id="qtyx"></h4>
+                                    <h4 id="warehousex"></h4>
+                                    <h4 id="unitcostx"></h4>
+                                </div>
+                            </div>
+                            <div class="col px-md-2">
+                                <div class="p-3 border bg-light">
+                                    <h4 id="qtyboxx"></h4>
+                                    <h4 id="mandatex"></h4>
+                                    <h4 id="expirydatex"></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row  mt-2">
+                    <div class="card">
+                        <div class="dx-viewport">
+                            <div id="profileContainer" class="mt-2"></div>
+                        </div>
+                    </div> 
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/prodqrcode-min.js"></script>
+    <% } else { %>
+        <script src="@@webRoot/assets/js/prodqrcode.js"></script>
+    <% } %>
+
+    <div id="prodmanID" style="display:none"><%=prodmanID%></div>
+    <div id="prodmanName" style="display:none"><%=prodmandName%></div>
+    <div id="qty" style="display:none"><%=qtyx%></div>
+    <div id="productID" style="display:none"><%=productID%></div>
+    <div id="batchNum" style="display:none"><%=batchNum%></div>
+    <div id="unitCost" style="display:none"><%=unitCost%></div>
+    <div id="qtyBox" style="display:none"><%=qtyBox%></div>
+    <div id="warehouseName" style="display:none"><%=warehouseName%></div>
+    <div id="mandate" style="display:none"><%=manDate%></div>
+    <div id="expirydate" style="display:none"><%=expiryDate%></div>
+
+</body>
+
+</html>

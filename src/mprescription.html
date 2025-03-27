@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include("partials/mhead.html")
+	<style>
+		.button {
+			width: 600px;
+			align-self: center;
+			height: 35px;
+			font-size: 130%;
+			opacity: 0.6;
+			text-align: left;
+			padding-left: 15px;
+		}
+
+		.dx-button.dx-button-warning {
+			background-color: hsla(34, 87%, 55%, 0.97);
+		}
+        #toast {
+            min-width: 250px; /* Set a default minimum width */
+            margin-left: 0px; /* Divide value of min-width by 2 */
+            color: #333333; /* Black text color */
+            text-align: center; /* Centered text */
+            border-radius: 2px; /* Rounded borders */
+            padding: 16px; /* Padding */
+            position: sticky; 
+            z-index: 1000; /* Add a z-index if needed */
+            top: 0%;
+            left: 50%; /* Center the snackbar */
+			bottom: 40%;
+        }
+
+	</style>
+	
+</head>  
+<body data-theme-color="color-primary">
+<div class="page-wraper">
+    
+    <!-- Preloader -->
+    <div id="preloader">
+		<div class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+    <!-- Preloader end-->
+	
+	<!-- Header -->
+    <header class="header">
+		<div class="main-bar">
+			<div class="container">
+				<div class="header-content">
+					<div class="left-content">
+						<a href="javascript:void(0);" class="back-btn">
+							<svg height="512" viewBox="0 0 486.65 486.65" width="512">
+								<path d="m202.114 444.648c-8.01-.114-15.65-3.388-21.257-9.11l-171.875-171.572c-11.907-11.81-11.986-31.037-.176-42.945.058-.059.117-.118.176-.176l171.876-171.571c12.738-10.909 31.908-9.426 42.817 3.313 9.736 11.369 9.736 28.136 0 39.504l-150.315 150.315 151.833 150.315c11.774 11.844 11.774 30.973 0 42.817-6.045 6.184-14.439 9.498-23.079 9.11z"/><path d="m456.283 272.773h-425.133c-16.771 0-30.367-13.596-30.367-30.367s13.596-30.367 30.367-30.367h425.133c16.771 0 30.367 13.596 30.367 30.367s-13.596 30.367-30.367 30.367z"/>
+							</svg>
+						</a>
+						<h5 class="title mb-0 text-nowrap" id="pagetitle"></h5>
+					</div>
+					<div class="mid-content"></div>
+					<div class="right-content" >
+						<a href="/mshopcartlist" class="pe-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 456.569 456.569">
+								<path d="M345.805 339.465c-29.323-.028-53.117 23.72-53.146 53.043s23.72 53.117 53.043 53.146 53.117-23.72 53.146-53.043v-.051c-.028-29.292-23.752-53.038-53.043-53.095zm94.171-254.244a20.44 20.44 0 0 0-3.855-.373H112.845l-5.12-34.253c-3.19-22.748-22.648-39.673-45.619-39.68H20.48C9.169 10.915 0 20.084 0 31.395s9.169 20.48 20.48 20.48h41.677a5.12 5.12 0 0 1 5.12 4.506l31.539 216.166c4.324 27.468 27.951 47.732 55.757 47.821h213.043c26.771.035 49.866-18.78 55.245-45.005l33.331-166.144c2.149-11.105-5.111-21.849-16.216-23.998zM215.737 390.286c-1.247-28.463-24.737-50.869-53.228-50.77h0c-29.299 1.184-52.091 25.896-50.907 55.195 1.136 28.113 24.005 50.458 52.136 50.943h1.28c29.295-1.284 52.002-26.073 50.719-55.368z" fill="#777"/>
+							</svg>
+                        </a>
+                        <a href="/mindex" class="ps-2  pe-2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.14373 20.7821V17.7152C9.14372 16.9381 9.77567 16.3067 10.5584 16.3018H13.4326C14.2189 16.3018 14.8563 16.9346 14.8563 17.7152V20.7732C14.8562 21.4473 15.404 21.9951 16.0829 22H18.0438C18.9596 22.0023 19.8388 21.6428 20.4872 21.0007C21.1356 20.3586 21.5 19.4868 21.5 18.5775V9.86585C21.5 9.13139 21.1721 8.43471 20.6046 7.9635L13.943 2.67427C12.7785 1.74912 11.1154 1.77901 9.98539 2.74538L3.46701 7.9635C2.87274 8.42082 2.51755 9.11956 2.5 9.86585V18.5686C2.5 20.4637 4.04738 22 5.95617 22H7.87229C8.19917 22.0023 8.51349 21.8751 8.74547 21.6464C8.97746 21.4178 9.10793 21.1067 9.10792 20.7821H9.14373Z" fill="#777"></path>
+                            </svg>
+                        </a> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+    <!-- Header End -->
+	
+	<!-- Page Content -->
+	<div class="page-content">
+		
+		<div class="container dx-viewport"> 
+			<div class="row" id="symptoms" style="margin: -20px 0px 0px -10px;" >
+				<div class="divider border-light inner-divider left mb-0"><span class="symptom"></span></div>	
+				<div class="col-12">
+					<div class="card-item style-2">
+						<div class="d-flex">
+							<div class="p-2 bg-light agegroup" style="width: 140px;"></div>
+							<div class="p-2 flex-grow-1" id="ageBox"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="card-item style-2">
+						<div class="d-flex">
+							<div class="p-2 bg-light weight" style="width: 140px;"></div>
+							<div class="p-2 flex-grow-1" id="weightBox"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="card-item style-2">
+						<div class="d-flex">
+							<div class="p-2 bg-light iscough" style="width: 140px;"></div>
+							<div class="p-2 flex-grow-1" id="coughBox"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="card-item style-2">
+						<div class="d-flex">
+							<div class="p-2 bg-light headacefever" style="width: 140px;"></div>
+							<div class="p-2 flex-grow-1" id="headacefeverBox"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="card-item style-2">
+						<div class="d-flex">
+							<div class="p-2 bg-light sleepy" style="width: 140px;"></div>
+							<div class="p-2 flex-grow-1" id="sleepyBox"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="card-item style-2">
+						<div class="d-flex">
+							<div class="p-2 bg-light stomach" style="width: 140px;"></div>
+							<div class="p-2 flex-grow-1" id="stomachBox"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="card-item style-2">
+						<div class="d-flex">
+							<div class="p-2 bg-light diabetic" style="width: 140px;"></div>
+							<div class="p-2 flex-grow-1" id="diabeticBox"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="card-item style-2">
+						<div class="d-flex">
+							<div class="p-2 bg-light bloodpressure" style="width: 140px;"></div>
+							<div class="p-2 flex-grow-1" id="bloodpressureBox"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="card-item style-2">
+						<div class="d-flex">
+							<div class="p-2 bg-light allergymed" style="width: 140px;"></div>
+							<div class="p-2 flex-grow-1" id="allergymedBox"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="dz-list style-3 mt-1 pt-1">	
+				<div class="divider border-warning inner-divider left mb-0 "><span class="budget"></span></div>	
+				<div id="price0"></div> 
+				<div class="text-bg-light p-2" id="toacomment0"></div>
+				<div class="btn btn-warning btn-block mb-3 dzToastBtn" id="buybudget"></div>
+				<div class="divider border-success inner-divider left mb-0 "><span class="standard"></span></div>	
+				<div id="price1"></div> 
+				<div class="text-bg-light p-2"  id="toacomment1"></div>
+				<div class="btn btn-success btn-block mb-3 dzToastBtn" id="buystandard"></div>
+				<div class="divider border-danger inner-divider left mb-0 "><span class="premium"></span></div>	
+				<div id="price2"></div>  
+				<div class="text-bg-light p-2"  id="toacomment2"></div>
+				<div class="btn btn-danger btn-block mb-3 dzToastBtn" id="buypremium"></div>  
+			</div>
+		</div>
+		
+	</div>
+    <!-- Page Content End-->
+	<div id="toast"></div>	
+</div> 
+
+
+<link href="@@webRoot/node_modules/devextreme/dist/css/dx.light.css" rel="stylesheet">
+@@include("partials/mscripts.html")
+<script src="@@webRoot/node_modules/devextreme/dist/js/dx.all.js"></script>
+
+
+<div id="illid" style="display:none"><%=illid%></div>
+<div id="illname" style="display:none"><%=illname%></div>
+
+<% if (production==1) { %>
+	<script src="@@webRoot/assets/js/bootbox-min.js"></script>
+	<script src="@@webRoot/assets/js/mprescription-min.js"></script>
+<% } else { %>
+	<script src="@@webRoot/assets/js/bootbox.js"></script>
+	<script src="@@webRoot/assets/js/mprescription.js"></script>
+<% } %>
+
+
+
+
+      
+
+</html>

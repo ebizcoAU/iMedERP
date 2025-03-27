@@ -1,0 +1,58 @@
+
+<!-- Custom scripts for all pages-->
+<div id="production" style="display:none"><%=production%></div>
+<div id="groupid" style="display:none"><%=groupID%></div>
+<div id="groupname" style="display:none"><%=groupName%></div>
+<div id="roleid" style="display:none"><%=roleID%></div>
+<div id="name" style="display:none"><%=name%></div>
+<div id="position" style="display:none"><%=position%></div>
+<div id="company" style="display:none"><%=company%></div>
+<div id="memberid" style="display:none"><%=memberID%></div>
+<div id="masterid" style="display:none"><%=parentID%></div>
+<div id="subdir" style="display:none"><%=subdir%></div>
+<div id="typeid" style="display:none"><%=typeID%></div>
+<div id="divisionid" style="display:none"><%=divisionID%></div>
+<div id="cryptoid" style="display:none"><%=cryptoid%></div>
+
+
+<!-- Libs JS -->
+<script src="@@webRoot/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="@@webRoot/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="@@webRoot/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+<script src="@@webRoot/node_modules/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+<script src="@@webRoot/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="@@webRoot/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+<script src="@@webRoot/node_modules/devextreme/dist/js/dx.all.js"></script>
+
+
+
+
+
+<!-- Theme JS -->
+<% if (production==1) { %>
+<script src="@@webRoot/assets/js/language-min.js"></script>
+<script src="@@webRoot/assets/js/dz.carousel-min.js"></script><!-- Swiper -->
+<script src="@@webRoot/assets/js/settings-min.js"></script>
+<script src="@@webRoot/assets/js/custom-min.js"></script>
+<script src="@@webRoot/assets/js/mindex-min.js"></script>
+<script src="@@webRoot/assets/js/source-min.js"></script>
+<script src="@@webRoot/assets/js/timeSolver-min.js"></script>
+<% } else { %>
+<script src="@@webRoot/assets/js/language.js"></script>    
+<script src="@@webRoot/assets/js/dz.carousel.js"></script><!-- Swiper -->
+<script src="@@webRoot/assets/js/settings.js"></script>
+<script src="@@webRoot/assets/js/custom.js"></script>
+<script src="@@webRoot/assets/js/mindex.js"></script>
+<script src="@@webRoot/assets/js/source.js"></script>
+<script src="@@webRoot/assets/js/timeSolver.js"></script>
+<% } %>
+
+
+
+
+
+
+
+
+<!-- endbuild -->

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include("partials/mhead.html")
+	<style>
+		#qr-video {
+          width:100%;
+          height:60%;
+        }
+		.dx-toast-message {
+			white-space: pre-line;
+		}
+        .dx-datagrid-headers {
+            background-color: rgb(0, 0, 0) !important;
+            color:rgb(255, 255, 255);
+        }
+        #searchdummy {
+            font-size: 1px;
+            width: 1px;
+            height: 1px;
+            float: left;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-top: 7px;
+            border-color: white;
+            color: white;
+        }
+        .button {
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 12px;
+        }
+        .buttonGREEN {
+            background-color: #04AA6D;
+        }
+        .buttonRED {
+            
+            background-color: #E44A2D;
+
+        }
+	</style>
+    
+</head>  
+<body data-theme-color="color-primary">
+<div class="page-wraper">
+    
+    <!-- Preloader -->
+    <div id="preloader">
+		<div class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+    <!-- Preloader end-->
+	<!-- Header -->
+    <header class="header">
+		<div class="main-bar">
+			<div class="container">
+				<div class="header-content">
+					<div class="left-content">
+						<a href="javascript:void(0);" class="back-btn">
+							<svg height="512" viewBox="0 0 486.65 486.65" width="512">
+								<path d="m202.114 444.648c-8.01-.114-15.65-3.388-21.257-9.11l-171.875-171.572c-11.907-11.81-11.986-31.037-.176-42.945.058-.059.117-.118.176-.176l171.876-171.571c12.738-10.909 31.908-9.426 42.817 3.313 9.736 11.369 9.736 28.136 0 39.504l-150.315 150.315 151.833 150.315c11.774 11.844 11.774 30.973 0 42.817-6.045 6.184-14.439 9.498-23.079 9.11z"/><path d="m456.283 272.773h-425.133c-16.771 0-30.367-13.596-30.367-30.367s13.596-30.367 30.367-30.367h425.133c16.771 0 30.367 13.596 30.367 30.367s-13.596 30.367-30.367 30.367z"/>
+							</svg>
+						</a>
+						<h5 class="title mb-0 text-nowrap stockreceive"></h5>
+					</div>
+					<div class="mid-content ms-5 ps-5">
+					</div>
+					<div class="right-content">
+                        <button class="mt-0 button buttonRED" id="butTxt"></button>
+                        <a href="javascript:void(0);" class="px-3 mt-2" id="qrcode">						
+							<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.61 122.88">
+								<path class="cls-1" d="M26.68,26.77H51.91V51.89H26.68V26.77ZM35.67,0H23.07A22.72,22.72,0,0,0,14.3,1.75a23.13,23.13,0,0,0-7.49,5l0,0a23.16,23.16,0,0,0-5,7.49A22.77,22.77,0,0,0,0,23.07V38.64H10.23V23.07a12.9,12.9,0,0,1,1-4.9A12.71,12.71,0,0,1,14,14l0,0a12.83,12.83,0,0,1,9.07-3.75h12.6V0ZM99.54,0H91.31V10.23h8.23a12.94,12.94,0,0,1,4.9,1A13.16,13.16,0,0,1,108.61,14l.35.36h0a13.07,13.07,0,0,1,2.45,3.82,12.67,12.67,0,0,1,1,4.89V38.64h10.23V23.07a22.95,22.95,0,0,0-6.42-15.93h0l-.37-.37a23.16,23.16,0,0,0-7.49-5A22.77,22.77,0,0,0,99.54,0Zm23.07,99.81V82.52H112.38V99.81a12.67,12.67,0,0,1-1,4.89,13.08,13.08,0,0,1-2.8,4.17,12.8,12.8,0,0,1-9.06,3.78H91.31v10.23h8.23a23,23,0,0,0,16.29-6.78,23.34,23.34,0,0,0,5-7.49,23,23,0,0,0,1.75-8.8ZM23.07,122.88h12.6V112.65H23.07A12.8,12.8,0,0,1,14,108.87l-.26-.24a12.83,12.83,0,0,1-2.61-4.08,12.7,12.7,0,0,1-.91-4.74V82.52H0V99.81a22.64,22.64,0,0,0,1.67,8.57,22.86,22.86,0,0,0,4.79,7.38l.31.35a23.2,23.2,0,0,0,7.5,5,22.84,22.84,0,0,0,8.8,1.75Zm66.52-33.1H96v6.33H89.59V89.78Zm-12.36,0h6.44v6H70.8V83.47H77V77.22h6.34V64.76H89.8v6.12h6.12v6.33H89.8v6.33H77.23v6.23ZM58.14,77.12h6.23V70.79h-6V64.46h6V58.13H58.24v6.33H51.8V58.13h6.33V39.33h6.43V58.12h6.23v6.33h6.13V58.12h6.43v6.33H77.23v6.33H70.8V83.24H64.57V95.81H58.14V77.12Zm31.35-19h6.43v6.33H89.49V58.12Zm-50.24,0h6.43v6.33H39.25V58.12Zm-12.57,0h6.43v6.33H26.68V58.12ZM58.14,26.77h6.43V33.1H58.14V26.77ZM26.58,70.88H51.8V96H26.58V70.88ZM32.71,77h13V89.91h-13V77Zm38-50.22H95.92V51.89H70.7V26.77Zm6.13,6.1h13V45.79h-13V32.87Zm-44,0h13V45.79h-13V32.87Z" fill="#777"/>
+							</svg>
+						</a>
+                        <a href="javascript:location.reload();"  class="text-dark font-24">
+                            <svg width="22" height="22" viewBox="0 0 32 32" fill="#666">
+                                <path d="M28,16c-1.219,0-1.797,0.859-2,1.766C25.269,21.03,22.167,26,16,26c-5.523,0-10-4.478-10-10S10.477,6,16,6  c2.24,0,4.295,0.753,5.96,2H20c-1.104,0-2,0.896-2,2s0.896,2,2,2h6c1.104,0,2-0.896,2-2V4c0-1.104-0.896-2-2-2s-2,0.896-2,2v0.518  C21.733,2.932,18.977,2,16,2C8.268,2,2,8.268,2,16s6.268,14,14,14c9.979,0,14-9.5,14-11.875C30,16.672,28.938,16,28,16z"/>
+                            </svg>
+                        </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+    <!-- Header End -->
+
+	
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="container">
+            <div class="mt-0">
+                <div id="reader"></div>
+				<audio id="audio" src="assets/audio/beep.mp3" autoplay="false" ></audio>
+                
+			</div>
+			
+            <div class="dx-viewport">
+                <div id="profileContainer" class="mx-1 mt-1"></div>
+            </div>
+			<div id="toast"></div>
+            <input type="text" id="searchdummy" autofocus>
+        </div>
+		
+    </div>
+    <!-- Page Content End-->
+	
+
+</div> 
+
+@@include("partials/mscripts.html")
+
+
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
+<% if (production==1) { %>
+	<script type="module" src="@@webRoot/assets/js/mstockreceive-min.js"></script>
+    <script src="@@webRoot/assets/js/onscan-min.js"></script>
+<% } else { %>
+	<script type="module" src="@@webRoot/assets/js/mstockreceive.js"></script>
+    <script src="@@webRoot/assets/js/onscan.js"></script>
+<% } %>
+
+
+</html>

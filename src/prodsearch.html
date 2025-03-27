@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>
+        
+        .dx-toolbar.dx-popup-title {  
+            background-color:cornflowerblue !important;
+        } 
+
+        .dx-toolbar.dx-popup-bottom{
+            background-color:cornflowerblue !important;
+        }
+
+        .first-group,
+        .second-group,
+        .third-group {
+            padding: 20px;
+        }
+        .second-group {
+            background-color: rgba(191, 191, 191, 0.15);
+        }
+        .third-group {
+            background-color: rgba(177, 94, 94, 0.15);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "prodman", "page": "prodsearch"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="pt-10 pb-10"></div>
+            <div class="container-fluid mt-n22 px-6">
+                <div class="row mt-8" id="header">
+                    <div class="card ">
+                        <div class="row mx-md-n5">
+                            <div class="col px-md-2">
+                                <div class="p-3 border bg-light">
+                                    <h4 id="refIDx"></h4>
+                                    <h4 id="productNamex"></h4>
+                                </div>
+                            </div>
+                            <div class="col px-md-2">
+                                <div class="p-3 border bg-light d-flex flex-column">
+                                    <h4 id="uuIDx"></h4>                                 
+                                    <h4 id="itemQtyx"></h4>
+                                </div>
+                            </div>
+                            <div class="col px-md-2">
+                                <div class="p-3 border bg-light d-flex flex-column">
+                                    <h4 id="dateAdded"></h4>
+                                    <h4 id="status"></h4>
+                                </div>
+                            </div>
+                          </div>
+                    </div> 
+                </div>
+                <div class="row mt-2">
+                    <div class="card">
+                        <div class="dx-viewport">
+                            <div id="profileContainer" class="mt-2"></div>
+                        </div>
+                    </div> 
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/prodsearch-min.js"></script>
+    <% } else { %>
+        <script src="@@webRoot/assets/js/prodsearch.js"></script>
+    <% } %>
+
+
+    <div id="boxID" style="display:none"><%=boxID%></div>
+    <div id="productName" style="display:none"><%=productName%></div>
+    <div id="boxRefID" style="display:none"><%=boxRefID%></div>
+    <div id="uuID" style="display:none"><%=uuID%></div>
+    <div id="itemQty" style="display:none"><%=itemQty%></div>
+    <div id="dateAddedx" style="display:none"><%=dateAdded%></div>
+    <div id="statusx" style="display:none"><%=statusx%></div>
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{
+  "background_color": "#fff",
+  "description": "AntiFake: Product Authentication and Distribution Management System",
+  "display": "fullscreen",
+  "icons": [
+	{
+	  "src": "assets/images/icons/logo.png",
+	  "sizes": "150x50",
+	  "type": "image/png"
+	}
+  ],
+  "name": "AntiFake: Product Authentication and Distribution Management System",
+  "short_name": "AntiFake",
+  "start_url": "mindex.html"
+}

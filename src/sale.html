@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>
+        
+        .dx-toolbar.dx-popup-title {  
+            background-color:cornflowerblue !important;
+        } 
+
+        .dx-toolbar.dx-popup-bottom{
+            background-color:cornflowerblue !important;
+        }
+
+        .first-group,
+        .second-group,
+        .third-group {
+            padding: 20px;
+        }
+        .second-group {
+            background-color: rgba(191, 191, 191, 0.15);
+        }
+        .third-group {
+            background-color: rgba(177, 94, 94, 0.15);
+        }
+        .qrcode {
+            padding: 10px; 
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "navmanorders", "page": "ordersx"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="pt-10 pb-10"></div>
+            <div class="container-fluid mt-n22 px-6">
+                <div class="row mt-8">
+                    <div class="card">
+                        <div class="row mx-md-n5">
+                            <div class="col-1 px-md-2">
+                                <div class="p-3 ">
+                                    <a href="/walletxchange" class="align-items-end">
+                                        <img class="align-items-center" src="/public/goback.png" width="90" height="80">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-5 px-md-2">
+                                <div class="p-3 border bg-light">
+                                    <h4 id="agentCompanyx"></h4>
+                                    <h4 id="agentAddressx"></h4>
+                                    <h4 id="dateAddedx"></h4>
+                                </div>
+                            </div>
+                            <div class="col-3 px-md-2">
+                                <div class="p-3 border bg-light">
+                                    <h4 id="customerNamex"></h4>
+                                    <h4 id="customerPhonex"></h4>
+                                    <h4 id="customerEmailx"></h4>
+                                </div>
+                            </div>
+                            <div class="col-3 px-md-2">
+                                <div class="p-3 border bg-light">
+                                    <h4 id="agentNamex"></h4>
+                                    <h4 id="agentPhonex"></h4>
+                                    <h4 id="agentEmailx"></h4>
+                                </div>
+                            </div>
+                          </div>
+                    </div> 
+                </div>
+                <div class="row mt-2">
+                    <div class="card">
+                        <div class="dx-viewport">
+                            <div id="profileContainer" class="mt-2"></div>
+                        </div>
+                    </div> 
+                </div>
+                <div id="toast"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/sale-min.js"></script>
+    <% } else { %>
+        <script src="@@webRoot/assets/js/sale.js"></script>
+    <% } %>
+    
+    <div id="saleID" style="display:none"><%=saleID%></div>
+    <div id="customerID" style="display:none"><%=customerID%></div>
+    <div id="customerPhone" style="display:none"><%=customerPhone%></div>
+    <div id="customerName" style="display:none"><%=customerName%></div>
+    <div id="customerEmail" style="display:none"><%=customerEmail%></div>
+    <div id="agentID" style="display:none"><%=agentID%></div>
+    <div id="agentPhone" style="display:none"><%=agentPhone%></div>
+    <div id="agentName" style="display:none"><%=agentName%></div>
+    <div id="agentEmail" style="display:none"><%=agentEmail%></div>
+    <div id="dateAdded" style="display:none"><%=dateAdded%></div>
+    <div id="agentCompany" style="display:none"><%=agentCompany%></div>
+    <div id="agentAddress" style="display:none"><%=agentAddress%></div>
+
+</body>
+
+</html>

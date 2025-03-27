@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>
+        #pivotgrid {
+            margin-top: 20px;
+        }
+        .cards {
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+        }
+        .card .card-link-wrapper {
+            margin-top: auto;
+        }
+        .cards::-webkit-scrollbar {
+            height: 12px;
+        }
+        .cards::-webkit-scrollbar-thumb,
+        .cards::-webkit-scrollbar-track {
+            border-radius: 92px;
+        }
+        .cards::-webkit-scrollbar-thumb {
+            background: var(--darkred);
+        }
+        .cards::-webkit-scrollbar-track {
+            background: var(--thumb);
+        }
+        .cards img {
+            display: block;
+            width: 140px;
+            height: 140px;
+        }
+        @media (min-width: 500px) {
+            .card {
+                flex-basis: calc(50% - 10px);
+            }
+            .card:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+        @media (min-width: 700px) {
+            .card {
+                flex-basis: calc(calc(100% / 3) - 20px);
+            }
+            .card:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+        @media (min-width: 1100px) {
+            .card {
+                flex-basis: calc(25% - 30px);
+            }
+            .card:not(:last-child) {
+                margin-right: 40px;
+            }
+        }
+       
+    </style>
+</head>
+
+
+  
+<body class="bg-light">
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "bizactivity", "page": "sitestat1"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="bg-blue pt-20 pb-5"></div>
+            <% if (roleID < 2) { 
+                if (groupID > 1) { %>
+                <div class="container-fluid mt-n22 px-4">
+                    <div class="row">
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-2">
+                            <!-- card -->
+                            <div class="card">
+                                <!-- card body -->
+                                <div class="card-body bg-light-primary">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 distributor"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-file-person fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div class="d-flex justify-content-between align-items-center mb-0">
+                                        <div>
+                                            <h2 class="fw-bold" id="distributorNo"></h2>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-2">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body bg-light-primary">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 diststaff"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-person-vcard fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div class="d-flex justify-content-between align-items-center mb-0">
+                                        <div>
+                                            <h2 class="fw-bold" id="diststaffNo"></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-2">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body bg-light-primary">
+                                <!-- heading -->
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 agent"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-person-fill fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div class="d-flex justify-content-between align-items-center mb-0">
+                                        <div>
+                                            <h2 class="fw-bold" id="agentNo"></h2>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-2">
+                        <!-- card -->
+                        <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body bg-light-primary">
+                                <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 agestaff"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-person-lines-fill fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div class="d-flex justify-content-between align-items-center mb-0">
+                                        <div>
+                                            <h2 class="fw-bold" id="agestaffNo"></h2>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-2">
+                            <!-- card -->
+                        <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body bg-light-primary">
+                                <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 manstaff"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-person-gear fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div class="d-flex justify-content-between align-items-center mb-0">
+                                        <div>
+                                            <h2 class="fw-bold" id="manstaffNo"></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-2">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body bg-light-primary">
+                                <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 customer"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-people fs-2"></i>
+                                        </div>
+                                    </div>
+                                        <!-- project number -->
+                                    <div class="d-flex justify-content-between align-items-center mb-0">
+                                        <div>
+                                            <h2 class="fw-bold" id="customerNo"></h2>
+                                        </div>
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-blue2 pt-18 pb-2"></div>
+                <div class="container-fluid mt-n22 px-4">
+                    <div class="row">  
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-7">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body bg-light-primary">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 brand"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary  rounded-2">
+                                            <i class="bi bi-award fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div>
+                                        <h2 class="fw-bold" id="brandNo"></h2>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-7">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body bg-light-primary">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 product"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary  rounded-2">
+                                            <i class="bi bi-cart2 fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div>
+                                        <h2 class="fw-bold" id="productNo"></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-7">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body bg-light-primary">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center  mb-1">
+                                        <div>
+                                            <h4 class="mb-0 warehouse"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary  rounded-2">
+                                            <i class="bi bi-house fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div>
+                                        <h2 class="fw-bold" id="warehouseNo"></h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-7">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body bg-light-primary">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 pallet"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-bullseye fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div>
+                                        <h2 class="fw-bold" id="palletNo"></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-7">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body bg-light-primary">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 box"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-box-seam fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div>
+                                        <h2 class="fw-bold" id="boxNo"></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-7">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body bg-light-primary">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 exportedqrcode"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-qr-code fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div>
+                                        <h2 class="fw-bold" id="proditemNo"></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row  -->
+                    <div class="row my-4">
+                        <div class="col-xl-3 col-lg-12 col-md-12 col-12 mb-6 mb-xl-0">
+                            <!-- card  -->
+                            <div class="card h-100">
+                                <!-- card body  -->
+                                <div class="card-body bg-secondary ">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h4 class="mb-0 text-white" id="top10category"></h4>
+                                        </div>
+                                    </div>
+                                    <!-- chart  -->
+                                    <div class="dx-viewport my-2">
+                                        <div id="categoryContainer" class="mt-2"></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-12 col-md-12 col-12 mb-6 mb-xl-0">
+                            <!-- card  -->
+                            <div class="card h-100">
+                                <!-- card body  -->
+                                <div class="card-body bg-secondary">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h4 class="mb-0 text-white" id="top10products"></h4>
+                                        </div>
+                                    </div>
+                                    <!-- chart  -->
+                                    <div class="dx-viewport my-2">
+                                        <div id="productContainer" class="mt-2"></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-12 col-md-12 col-12 mb-6 mb-xl-0">
+                            <!-- card  -->
+                            <div class="card h-100">
+                                <!-- card body  -->
+                                <div class="card-body bg-secondary">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h4 class="mb-0 text-white" id="top10agent"></h4>
+                                        </div>
+                                    </div>
+                                    <!-- chart  -->
+                                    <div class="dx-viewport my-2">
+                                        <div id="agentContainer" class="mt-2"></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-12 col-md-12 col-12 mb-6 mb-xl-0">
+                            <!-- card  -->
+                            <div class="card h-100">
+                                <!-- card body  -->
+                                <div class="card-body bg-secondary">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h4 class="mb-0 text-white" id="top10agentstaff"></h4>
+                                        </div>
+                                    </div>
+                                    <!-- chart  -->
+                                    <div class="dx-viewport my-2">
+                                        <div id="agentstaffContainer" class="mt-2"></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <ul class="cards" id="prodcarousel" styles="animation-duration: 4s;">
+                    </ul>
+                </div>
+                <% } else { %>
+                <div class="container-fluid mt-n22 px-4">
+                    <div class="row">
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-2">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 directorboard"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary  rounded-2">
+                                            <i class="bi bi-award fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div>
+                                        <h2 class="fw-bold" id="manufacturerNo"></h2>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-2">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body">
+                                <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 manstaff"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-person-gear fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div class="d-flex justify-content-between align-items-center mb-0">
+                                        <div>
+                                            <h2 class="fw-bold" id="manstaffNo"></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-2">
+                            <!-- card -->
+                            <div class="card">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 distributor"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-file-person fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div class="d-flex justify-content-between align-items-center mb-0">
+                                        <div>
+                                            <h2 class="fw-bold" id="distributorNo"></h2>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-2">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 diststaff"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-person-vcard fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div class="d-flex justify-content-between align-items-center mb-0">
+                                        <div>
+                                            <h2 class="fw-bold" id="diststaffNo"></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-2">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 agent"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-person-fill fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div class="d-flex justify-content-between align-items-center mb-0">
+                                        <div>
+                                            <h2 class="fw-bold" id="agentNo"></h2>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-2">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body">
+                                <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 agestaff"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-person-lines-fill fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div class="d-flex justify-content-between align-items-center mb-0">
+                                        <div>
+                                            <h2 class="fw-bold" id="agestaffNo"></h2>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-blue2 pt-18 pb-2"></div>
+                <div class="container-fluid mt-n22 px-4">
+                    <div class="row">  
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-7">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 brand"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary  rounded-2">
+                                            <i class="bi bi-award fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div>
+                                        <h2 class="fw-bold" id="brandNo"></h2>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-7">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 product"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary  rounded-2">
+                                            <i class="bi bi-cart2 fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div>
+                                        <h2 class="fw-bold" id="productNo"></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-7">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 pallet"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-bullseye fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div>
+                                        <h2 class="fw-bold" id="palletNo"></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-7">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 box"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-box-seam fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div>
+                                        <h2 class="fw-bold" id="boxNo"></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-7">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body">
+                                <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 customer"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-people fs-2"></i>
+                                        </div>
+                                    </div>
+                                        <!-- project number -->
+                                    <div class="d-flex justify-content-between align-items-center mb-0">
+                                        <div>
+                                            <h2 class="fw-bold" id="customerNo"></h2>
+                                        </div>
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>
+                        
+                        <div class="col-xl-2 col-lg-6 col-md-12 col-12 mt-7">
+                            <!-- card -->
+                            <div class="card ">
+                                <!-- card body -->
+                                <div class="card-body">
+                                    <!-- heading -->
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div>
+                                            <h4 class="mb-0 exportedqrcode"></h4>
+                                        </div>
+                                        <div class="icon-shape icon-sm bg-light-primary text-primary rounded-2">
+                                            <i class="bi bi-qr-code fs-2"></i>
+                                        </div>
+                                    </div>
+                                    <!-- project number -->
+                                    <div>
+                                        <h2 class="fw-bold" id="proditemNo"></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row  -->
+                </div>
+                <% } %>
+
+            <% } else { %>
+                <div class="container-fluid mt-n22 px-4">
+                    <div class="row my-4">
+                        <div class="col-xl-3 col-lg-12 col-md-12 col-12 mb-6 mb-xl-0">
+                            <!-- card  -->
+                            <div class="card h-100">
+                                <!-- card body  -->
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h4 class="mb-0" id="top10category"></h4>
+                                        </div>
+                                    </div>
+                                    <!-- chart  -->
+                                    <div class="dx-viewport my-2">
+                                        <div id="categoryContainer" class="mt-2"></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-12 col-md-12 col-12 mb-6 mb-xl-0">
+                            <!-- card  -->
+                            <div class="card h-100">
+                                <!-- card body  -->
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h4 class="mb-0" id="top10agent"></h4>
+                                        </div>
+                                    </div>
+                                    <!-- chart  -->
+                                    <div class="dx-viewport my-2">
+                                        <div id="agentContainer" class="mt-2"></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-12 col-md-12 col-12 mb-6 mb-xl-0">
+                            <!-- card  -->
+                            <div class="card h-100">
+                                <!-- card body  -->
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h4 class="mb-0" id="top10agentstaff"></h4>
+                                        </div>
+                                    </div>
+                                    <!-- chart  -->
+                                    <div class="dx-viewport my-2">
+                                        <div id="agentstaffContainer" class="mt-2"></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-12 col-md-12 col-12 mb-6 mb-xl-0">
+                            <!-- card  -->
+                            <div class="card h-100">
+                                <!-- card body  -->
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h4 class="mb-0" id="top10products"></h4>
+                                        </div>
+                                    </div>
+                                    <!-- chart  -->
+                                    <div class="dx-viewport my-2">
+                                        <div id="productContainer" class="mt-2"></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="container">
+                    <ul class="cards" id="prodcarousel" styles="animation-duration: 4s;">
+                    </ul>
+                </div>
+            <% } %>
+            
+        </div>
+    </div>
+    
+
+
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/index-min.js"></script>
+    <% } else { %>
+        <script src="@@webRoot/assets/js/index.js"></script>
+    <% } %>
+    
+    <div id="constat" style="display:none"><%=constat%></div>
+    <div id="productstat" style="display:none"><%=productstat%></div>
+
+
+
+</body>
+
+</html>

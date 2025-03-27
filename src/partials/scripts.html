@@ -1,0 +1,79 @@
+<!-- Libs JS -->
+<script src="@@webRoot/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="@@webRoot/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="@@webRoot/node_modules/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="@@webRoot/node_modules/feather-icons/dist/feather.min.js"></script>
+<script src="@@webRoot/node_modules/prismjs/prism.js"></script>
+<script src="@@webRoot/node_modules/dropzone/dist/min/dropzone.min.js"></script>
+<script src="@@webRoot/node_modules/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+<script src="@@webRoot/node_modules/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+<!-- 
+<script src="@@webRoot/node_modules/devexpress-diagram/dist/dx-diagram.min.js"></script>
+<script src="@@webRoot/node_modules/devexpress-gantt/dist/dx-gantt.min.js"></script>
+<script src="@@webRoot/node_modules/devextreme/dist/js/dx.all.js"></script>
+-->
+<script src="@@webRoot/node_modules/qrcodejs/qrcode.min.js"></script>
+<script src="@@webRoot/node_modules/exceljs/dist/exceljs.min.js"></script>
+<script src="@@webRoot/node_modules/file-saver/dist/FileSaver.min.js"></script>
+<script src="@@webRoot/node_modules/jspdf/dist/jspdf.umd.min.js"></script>
+
+<!-- ext Lib JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.js"></script>
+<script src="@@webRoot/node_modules/devextreme/dist/js/dx.all.js"></script>
+
+<script src="@@webRoot/node_modules/bootstrap-fileinput/js/plugins/buffer.min.js" type="text/javascript"></script>
+<script src="@@webRoot/node_modules/bootstrap-fileinput/js/plugins/filetype.min.js" type="text/javascript"></script>
+<script src="@@webRoot/node_modules/bootstrap-fileinput/js/plugins/piexif.min.js" type="text/javascript"></script>
+<script src="@@webRoot/node_modules/bootstrap-fileinput/js/plugins/sortable.min.js" type="text/javascript"></script>
+<script src="@@webRoot/node_modules/bootstrap-fileinput/js/fileinput.min.js"></script>
+<script src="@@webRoot/node_modules/bootstrap-fileinput/themes/fa5/theme.min.js"></script>
+
+
+<!-- Custom scripts for all pages-->
+<div id="production" style="display:none"><%=production%></div>
+<div id="groupid" style="display:none"><%=groupID%></div>
+<div id="roleid" style="display:none"><%=roleID%></div>
+<div id="staffname" style="display:none"><%=name%></div>
+<div id="position" style="display:none"><%=position%></div>
+<div id="company" style="display:none"><%=company%></div>
+<div id="memberid" style="display:none"><%=memberID%></div>
+<div id="masterid" style="display:none"><%=parentID%></div>
+<div id="subdir" style="display:none"><%=subdir%></div>
+<div id="typeid" style="display:none"><%=typeID%></div>
+<div id="themeid" style="display:none"><%=themeID%></div>
+<div id="divisionid" style="display:none"><%=divisionID%></div>
+<div id="hasNew" style="display:none"><%=hasNew%></div>
+<div id="smsWebUrl" style="display:none"><%=smsWebUrl%></div>
+
+
+
+
+
+<!-- Theme JS -->
+<% if (production==1) { %>
+    <script src="@@webRoot/assets/js/language-min.js"></script>
+    <script src="@@webRoot/assets/js/main-min.js"></script>
+    <script src="@@webRoot/assets/js/feather-min.js"></script>
+    <script src="@@webRoot/assets/js/sidebarMenu-min.js"></script>
+    <script src="@@webRoot/assets/js/local-min.js"></script>
+    <script src="@@webRoot/assets/js/login-min.js"></script>
+    <script src="@@webRoot/assets/js/source-min.js"></script>
+    <script src="@@webRoot/assets/js/localsrc-min.js"></script>
+    <script src="@@webRoot/assets/js/fonts-min.js"></script>
+<% } else { %>
+    <script src="@@webRoot/assets/js/language.js"></script>
+    <script src="@@webRoot/assets/js/main.js"></script>
+    <script src="@@webRoot/assets/js/feather.js"></script>
+    <script src="@@webRoot/assets/js/sidebarMenu.js"></script>
+    <script src="@@webRoot/assets/js/local.js"></script>
+    <script src="@@webRoot/assets/js/login.js"></script>
+    <script src="@@webRoot/assets/js/source.js"></script>
+    <script src="@@webRoot/assets/js/localsrc.js"></script>
+    <script src="@@webRoot/assets/js/fonts.js"></script>
+<% } %>
+    
+    
+
+
+<!-- endbuild -->

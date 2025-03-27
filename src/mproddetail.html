@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include("partials/mhead.html")
+</head>  
+<body data-theme-color="color-primary">
+<div class="page-wraper">
+    
+    <!-- Preloader -->
+    <div id="preloader">
+		<div class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+    <!-- Preloader end-->
+	
+	<!-- Header -->
+    <header class="header transparent">
+		<div class="main-bar">
+			<div class="container">
+				<div class="header-content">
+					<div class="left-content">
+						<a href="javascript:void(0);" class="back-btn">
+							<svg height="512" viewBox="0 0 486.65 486.65" width="512">
+								<path d="m202.114 444.648c-8.01-.114-15.65-3.388-21.257-9.11l-171.875-171.572c-11.907-11.81-11.986-31.037-.176-42.945.058-.059.117-.118.176-.176l171.876-171.571c12.738-10.909 31.908-9.426 42.817 3.313 9.736 11.369 9.736 28.136 0 39.504l-150.315 150.315 151.833 150.315c11.774 11.844 11.774 30.973 0 42.817-6.045 6.184-14.439 9.498-23.079 9.11z"/><path d="m456.283 272.773h-425.133c-16.771 0-30.367-13.596-30.367-30.367s13.596-30.367 30.367-30.367h425.133c16.771 0 30.367 13.596 30.367 30.367s-13.596 30.367-30.367 30.367z"/>
+							</svg>
+						</a>
+					</div>
+					<div class="mid-content"></div>
+					<div class="right-content pe-2" >
+                        <a href="/mshopcartlist" class="pe-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 456.569 456.569">
+								<path d="M345.805 339.465c-29.323-.028-53.117 23.72-53.146 53.043s23.72 53.117 53.043 53.146 53.117-23.72 53.146-53.043v-.051c-.028-29.292-23.752-53.038-53.043-53.095zm94.171-254.244a20.44 20.44 0 0 0-3.855-.373H112.845l-5.12-34.253c-3.19-22.748-22.648-39.673-45.619-39.68H20.48C9.169 10.915 0 20.084 0 31.395s9.169 20.48 20.48 20.48h41.677a5.12 5.12 0 0 1 5.12 4.506l31.539 216.166c4.324 27.468 27.951 47.732 55.757 47.821h213.043c26.771.035 49.866-18.78 55.245-45.005l33.331-166.144c2.149-11.105-5.111-21.849-16.216-23.998zM215.737 390.286c-1.247-28.463-24.737-50.869-53.228-50.77h0c-29.299 1.184-52.091 25.896-50.907 55.195 1.136 28.113 24.005 50.458 52.136 50.943h1.28c29.295-1.284 52.002-26.073 50.719-55.368z" fill="#777"/>
+							</svg>
+                        </a>
+                        <a href="/mindex" class="ps-2  pe-2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.14373 20.7821V17.7152C9.14372 16.9381 9.77567 16.3067 10.5584 16.3018H13.4326C14.2189 16.3018 14.8563 16.9346 14.8563 17.7152V20.7732C14.8562 21.4473 15.404 21.9951 16.0829 22H18.0438C18.9596 22.0023 19.8388 21.6428 20.4872 21.0007C21.1356 20.3586 21.5 19.4868 21.5 18.5775V9.86585C21.5 9.13139 21.1721 8.43471 20.6046 7.9635L13.943 2.67427C12.7785 1.74912 11.1154 1.77901 9.98539 2.74538L3.46701 7.9635C2.87274 8.42082 2.51755 9.11956 2.5 9.86585V18.5686C2.5 20.4637 4.04738 22 5.95617 22H7.87229C8.19917 22.0023 8.51349 21.8751 8.74547 21.6464C8.97746 21.4178 9.10793 21.1067 9.10792 20.7821H9.14373Z" fill="#777"></path>
+                            </svg>
+                        </a> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+    <!-- Header End -->
+    <div class="page-content">
+		<form id="inputFormx" >
+			<div class="content-body bottom-content">
+				<div class="swiper-btn-center-lr my-0">
+					<div class="swiper demo-swiper">
+						<div class="swiper-wrapper" id="prodimages">
+						</div>
+						<div class="swiper-btn">
+							<div class="swiper-pagination style-2 flex-1"></div>
+						</div>
+					</div>
+				</div>
+				<div class="account-box style-1">
+					<div class="container" id="proddetails">
+						<div class="company-detail">
+							<div class="detail-content">
+								<div class="flex-1">
+									<h6 class="text-secondary sub-title" id="catName"></h6>
+									<h4 id="prodName"></h4>
+									<p id="proddescription"></p>
+								</div>
+							</div>
+							<ul class="item-inner">
+								<li>
+									<div class="reviews-info">
+										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M21.3899 11.6C21.6646 11.3192 21.8559 10.9676 21.9424 10.5845C22.029 10.2013 22.0073 9.80162 21.8799 9.43003C21.7604 9.05734 21.5386 8.7257 21.2398 8.47289C20.941 8.22007 20.5773 8.05623 20.1899 8.00003L15.8999 7.34003C15.8799 7.33423 15.8615 7.32404 15.8459 7.3102C15.8303 7.29636 15.818 7.27922 15.8099 7.26003L13.9299 3.26003C13.7651 2.88547 13.4949 2.56693 13.1522 2.34321C12.8095 2.1195 12.4092 2.00026 11.9999 2.00003C11.5954 1.99835 11.1991 2.11354 10.8585 2.33174C10.5179 2.54994 10.2475 2.86187 10.0799 3.23003L8.19994 7.23003C8.18968 7.24953 8.1755 7.2667 8.15829 7.28047C8.14108 7.29423 8.12122 7.3043 8.09994 7.31003L3.81994 8.00003C3.43203 8.05782 3.06776 8.22207 2.76764 8.47453C2.46751 8.72699 2.2433 9.05775 2.11994 9.43003C1.99723 9.80291 1.97896 10.2023 2.0671 10.5848C2.15524 10.9673 2.34643 11.3184 2.61994 11.6L5.77994 14.85C5.78903 14.8705 5.79373 14.8926 5.79373 14.915C5.79373 14.9374 5.78903 14.9596 5.77994 14.98L5.03994 19.52C4.97114 19.9154 5.01599 20.3222 5.16926 20.6931C5.32253 21.064 5.57794 21.3838 5.90577 21.6152C6.23361 21.8467 6.62042 21.9804 7.02122 22.0007C7.42203 22.021 7.82037 21.9272 8.16994 21.73L11.8999 19.66C11.9185 19.6504 11.939 19.6453 11.9599 19.6453C11.9808 19.6453 12.0014 19.6504 12.0199 19.66L15.7499 21.73C16.1 21.9229 16.4972 22.0135 16.8963 21.9913C17.2953 21.9691 17.6801 21.8351 18.0065 21.6045C18.333 21.374 18.5881 21.0563 18.7425 20.6877C18.897 20.3191 18.9446 19.9144 18.8799 19.52L18.1899 15C18.1794 14.9818 18.1739 14.9611 18.1739 14.94C18.1739 14.919 18.1794 14.8983 18.1899 14.88L21.3899 11.6Z" fill="#FFA902"/>
+										</svg>
+										<h6 class="reviews">4.6 (89 reviews)</h6>
+									</div>
+								</li>
+								<li>
+									<a class="d-flex delivery" href="javascript:void(0);">
+										<svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M17.415 5H15.81V2.51C15.7935 1.39475 14.8853 0.5 13.77 0.5H2.79C1.67475 0.5 0.7665 1.39475 0.75 2.51V11.99C0.7665 13.1052 1.67475 14 2.79 14H5.415C5.83875 15.1678 7.1295 15.7715 8.298 15.347C8.92425 15.1198 9.41775 14.6263 9.645 14H16.335C16.7588 15.1678 18.0495 15.7715 19.218 15.347C19.8442 15.1198 20.3377 14.6263 20.565 14H21.525C22.4775 14 23.25 13.2275 23.25 12.275V10.865C23.2628 7.6385 20.6565 5.01275 17.43 5C17.4247 5 17.4202 5 17.415 5ZM7.5 9.17C7.35975 9.28625 7.19175 9.36425 7.0125 9.395C6.63525 9.46475 6.249 9.3275 6 9.035L5.175 8C4.914 7.6895 4.947 7.2275 5.25 6.9575C5.568 6.692 6.04125 6.7355 6.306 7.0535L6.3075 7.055L6.8775 7.73L9.8775 5.2625C10.1798 4.97975 10.6545 4.9955 10.9373 5.29775C11.22 5.6 11.2043 6.07475 10.902 6.3575C10.8795 6.3785 10.8555 6.39875 10.83 6.41675L7.5 9.17ZM7.5 14C7.086 14 6.75 13.664 6.75 13.25C6.75 12.836 7.086 12.5 7.5 12.5C7.914 12.5 8.25 12.836 8.25 13.25C8.25 13.664 7.914 14 7.5 14ZM18.45 14C18.036 14 17.7 13.664 17.7 13.25C17.7 12.836 18.036 12.5 18.45 12.5C18.864 12.5 19.2 12.836 19.2 13.25C19.2 13.664 18.864 14 18.45 14ZM16.3275 12.5H15.81V6.5H17.415C19.809 6.5 21.75 8.441 21.75 10.835V10.865V12.275C21.7545 12.395 21.66 12.4955 21.54 12.5C21.5347 12.5 21.5295 12.5 21.525 12.5H20.5725C20.2358 11.6322 19.4048 11.0533 18.4792 11.0413C17.5335 11.0293 16.6718 11.612 16.3275 12.5Z" fill="var(--primary)"/>
+										</svg>
+										<h6 class="mb-0 ms-2" id="qtyperbox"></h6>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="item-list-2">
+							<div class="price">
+								<span class="text-style text-soft" id="unitprice"></span>
+								<del class="off-text" id="offprice"></del>
+								<h5 class="sub-title" id="newprice"></h5>
+							</div>
+							<div class="price">
+								<span class="text-style text-soft" id="boxprice"></span>
+								<del class="off-text" id="offpricex">---</del>
+								<h5 class="sub-title" id="newpricex"></h5>
+							</div>
+							<div class="dz-stepper border-1 style-3 rounded-stepper">
+								<input class="stepper" type="text" value="100" id="qtyx">
+							</div>
+						</div>
+						<div class="d-flex align-items-center justify-content-between">
+							<div class="badge bg-accent badge-lg badge-warning font-w400 px-3" id="discountx"></div>     
+						</div>	
+					</div>
+				</div>
+			</div> 
+			<!-- Footer -->
+			<div class="footer fixed">
+				<div class="container">
+					<button class="btn btn-primary text-start w-100"><i class="fa fa-shopping-cart lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span id="add2cart">ADD TO CART</span></button>
+				</div>
+			</div>
+		</form>
+		<div id="toast"></div>	
+    </div>    
+    <!-- Page Content End -->
+    	
+</div>
+
+@@include("partials/mscripts.html")
+
+<script src="@@webRoot/assets/vendor/nouislider/nouislider.min.js"></script>
+<script src="@@webRoot/assets/vendor/wnumb/wNumb.js"></script>
+<script src="@@webRoot/assets/js/noui-slider.init.js"></script>
+
+
+<div id="prodid" style="display:none"><%=prodid%></div>
+
+<% if (production==1) { %>
+	<script src="@@webRoot/assets/js/mproddetail-min.js"></script>
+<% } else { %>
+	<script src="@@webRoot/assets/js/mproddetail.js"></script>
+<% } %>
+
+</body>
+</html>

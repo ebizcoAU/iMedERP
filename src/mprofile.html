@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include("partials/mhead.html")
+	
+</head>
+<body data-theme-color="color-primary">
+<div class="page-wraper">
+    
+	<!-- Preloader -->
+	<div id="preloader">
+		<div class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+    <!-- Preloader end-->
+	
+	<!-- Header -->
+	<header class="header">
+		<div class="main-bar">
+			<div class="container">
+				<div class="header-content">
+                    <div class="left-content">
+						<a href="javascript:void(0);" class="back-btn">
+							<svg height="512" viewBox="0 0 486.65 486.65" width="512">
+								<path d="m202.114 444.648c-8.01-.114-15.65-3.388-21.257-9.11l-171.875-171.572c-11.907-11.81-11.986-31.037-.176-42.945.058-.059.117-.118.176-.176l171.876-171.571c12.738-10.909 31.908-9.426 42.817 3.313 9.736 11.369 9.736 28.136 0 39.504l-150.315 150.315 151.833 150.315c11.774 11.844 11.774 30.973 0 42.817-6.045 6.184-14.439 9.498-23.079 9.11z"/><path d="m456.283 272.773h-425.133c-16.771 0-30.367-13.596-30.367-30.367s13.596-30.367 30.367-30.367h425.133c16.771 0 30.367 13.596 30.367 30.367s-13.596 30.367-30.367 30.367z"/>
+							</svg>
+						</a>
+						<h5 class="title mb-0 text-nowrap" id="pagetitle"></h5>
+					</div>
+                    <div class="mid-content"></div>
+					<div class="right-content pe-2" >
+                        <a href="javascript:void(0);" class="menu-toggler me-2">
+							<!-- <i class="fa-solid fa-bars font-16"></i> -->
+							<svg class="text-dark" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 24 24" width="30px" fill="#000000">
+								<path d="M13 14v6c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1h-6c-.55 0-1 .45-1 1zm-9 7h6c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1zM3 4v6c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1zm12.95-1.6L11.7 6.64c-.39.39-.39 1.02 0 1.41l4.25 4.25c.39.39 1.02.39 1.41 0l4.25-4.25c.39-.39.39-1.02 0-1.41L17.37 2.4c-.39-.39-1.03-.39-1.42 0z"></path>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Header -->
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="content-inner pt-0">
+			<div class="container p-b30 profile-area">
+				<div class="profile">	
+					<div class="d-flex align-items-center">
+						<div class="d-flex flex-column">
+							<a  href="/mstaff">
+								<div class="media media-110 me-3" id="staffimgx"></div>
+							</a>
+							<h6 class="ps-1 pt-1 text-white uuid"></h6>
+						</div>
+						<div class="about-profile">
+							<div class="sub-title">
+								<a href="/mprofileedit" class="notify-cart mb-1 ">
+									<span class="font-16 font-w600 text-dark ms-2 namex"></span>
+									<div class="badge">
+										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="white">
+											<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v1c0 .55.45 1 1 1h14c.55 0 1-.45 1-1v-1c0-2.66-5.33-4-8-4z"/>
+										</svg>
+									</div>
+									
+								</a>
+								<% if ((roleID == 3) || (roleID > 4) ) { %>
+								<a href="/mwallet" class="notify-cart mt-1 ">
+									<span class="font-18 font-w600 text-dark wallet ms-3"></span>
+									<div class="badge">
+										<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="white">
+											<path id="Wallet" d="M24,12.05V8.25A1.25,1.25,0,0,0,22.75,7H22V4.25A1.25,1.25,0,0,0,20.75,3H2.5A2.5,2.5,0,0,0,0,5.5H0v15A2.5,2.5,0,0,0,2.5,23H22.75A1.24,1.24,0,0,0,24,21.75V18a1.23,1.23,0,0,0,1-1.2v-3.5A1.23,1.23,0,0,0,24,12.05ZM3,6A1,1,0,0,1,4,5H21V7H4A1,1,0,0,1,3,6ZM24,16.75a.25.25,0,0,1-.25.25H19.11A2.08,2.08,0,0,1,17,15.34,2,2,0,0,1,19,13h4.75a.25.25,0,0,1,.25.25ZM19,14a1,1,0,1,0,1,1A1,1,0,0,0,19,14Z"/>
+										</svg>
+									</div>
+								</a>
+								<% } %>
+								
+								<div class="d-flex justify-content-between">
+									<div class="d-flex flex-column">
+										<div class="text pt-1 text-white companyx"></div>
+										<small class="text-white rolex"></small>
+									</div>
+									<div class="btn btn-sm btn-primary confirmxchange"></div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div> 
+                <div class="profile-content border-0">
+                    <ul>
+                        <li>
+                            <a href="/mordersman">
+                                <i class="fa-solid fa-clock"></i><span class="myorders"></span> 
+                            </a>
+                        </li>
+						<% if ((roleID == 3) || (roleID > 4) ){ %>  
+						<li>  
+							<a href="/mwallet">
+								<i class="fa-solid fa-credit-card"></i><span class="checkwallet"></span> 	
+							</a>
+						</li>
+						<% } %>
+                        <li>
+                            <a href="review.html">
+                                <i class="fa-solid fa-star"></i><span class="ratingsnreview"></span> 
+                            </a>
+                        </li>
+						<li>
+                            <a href="/mprofileedit">
+                                <i class="fa-solid fa-user"></i><span id="updateprofile"></span> 
+                            </a>
+                        </li>  
+
+						<% if ((roleID == 7) || (roleID=6)) { %>
+						<li>
+							<a href="/mpayroll">
+								<i class="fa-solid fa-credit-card"></i><span id="payroll"></span> 
+							</a>
+						</li>  
+						<% } %>
+
+                        <!--- li>
+                            <a href="notification.html">
+                                <i class="fa-solid fa-bell"></i>
+                                Notification
+                                <span class="badge badge-circle align-items-center badge-danger ms-auto me-3">1</span>	
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                                <i class="fa-solid fa-location-dot"></i>
+                                Delivery Address
+                            </a>
+                        </li>
+                        <li>
+                            <a href="blog.html">
+                                <i class="fa-brands fa-microblog"></i>
+                                Blog & Blog Detail
+                            </a>
+                        </li --->
+                        <li class="border-0">
+                            <a href="javascript:void(0);" class="logout">
+                                <i class="fa-solid fa-power-off"></i>
+                                LogOut
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+                
+
+
+			</div>    
+		</div>
+        
+    </div>    
+    <!-- Page Content End-->
+
+	<!-- Sidebar -->
+    @@include("partials/mnavbar.html")
+    <!-- Sidebar End -->
+	
+    
+	
+	<!-- Menubar -->
+	@@include("partials/mmenubar.html", { "activepanel": "profile"})
+	<!-- Menubar -->
+	
+	@@include("partials/suppliment.html")
+</div> 
+
+<div id="imglinkx" style="display:none"><%=imgLink%></div>
+<div id="weburl" style="display:none"><%=weburl%></div>
+<div id="walletbalance" style="display:none"><%=walletbalance%></div>
+
+
+<!-- Scripts -->
+@@include("partials/mscripts.html")
+
+
+<% if (production==1) { %>
+	<script src="@@webRoot/assets/js/mprofile-min.js"></script>
+<% } else { %>
+	<script src="@@webRoot/assets/js/mprofile.js"></script>
+<% } %>
+
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>
+        #pivotgrid {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+
+  
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "bizactivity", "page": "sitestat3"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="bg-blue pt-20 pb-5"></div>
+            <div class="container-fluid mt-n22 px-6">
+                <div class="row mt-4">
+                    <div class="col-md-12 col-12">
+                        <!-- card  -->
+                        <div class="card">
+                            <div id="pivotgrid-demo" class="mt-6 mb-2 mx-2">
+                                <div id="pivotgrid2-chart"></div>
+                                <div id="pivotgrid2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/manustat-min.js"></script>
+    <% } else { %>
+        <script src="@@webRoot/assets/js/manustat.js"></script>
+    <% } %>
+
+
+</body>
+
+</html>

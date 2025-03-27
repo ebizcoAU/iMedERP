@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>
+       
+
+       
+    </style>
+</head>
+
+
+  
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "finactivity", "page": "balancesheet"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="bg-blue pt-20 pb-5"></div>
+            <div class="container-fluid mt-n22 px-6 dx-viewport">
+                <!-- card  -->
+                <div class="card" >
+                    <div class="mt-1 mb-1 mx-1 ">
+                        <div class="pt-2 bg-white" id="profileContainer"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="toast"></div>
+        </div>
+    </div>
+    
+
+
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/balancesheet-min.js"></script>
+
+    <% } else { %>
+        <script src="@@webRoot/assets/js/balancesheet.js"></script>
+
+    <% } %>
+
+
+</body>
+
+</html>

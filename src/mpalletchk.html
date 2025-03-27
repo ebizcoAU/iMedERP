@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include("partials/mhead.html")
+	<style>
+		#qr-video {
+          width:100%;
+          height:60%;
+        }
+		.dx-toast-message {
+			white-space: pre-line;
+		}
+	</style>
+</head>  
+<body data-theme-color="color-primary">
+<div class="page-wraper">
+    
+    <!-- Preloader -->
+    <div id="preloader">
+		<div class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+    <!-- Preloader end-->
+	<!-- Header -->
+    <header class="header">
+		<div class="main-bar">
+			<div class="container">
+				<div class="header-content">
+					<div class="left-content">
+						<a href="javascript:void(0);" class="back-btn">
+							<svg height="512" viewBox="0 0 486.65 486.65" width="512">
+								<path d="m202.114 444.648c-8.01-.114-15.65-3.388-21.257-9.11l-171.875-171.572c-11.907-11.81-11.986-31.037-.176-42.945.058-.059.117-.118.176-.176l171.876-171.571c12.738-10.909 31.908-9.426 42.817 3.313 9.736 11.369 9.736 28.136 0 39.504l-150.315 150.315 151.833 150.315c11.774 11.844 11.774 30.973 0 42.817-6.045 6.184-14.439 9.498-23.079 9.11z"/><path d="m456.283 272.773h-425.133c-16.771 0-30.367-13.596-30.367-30.367s13.596-30.367 30.367-30.367h425.133c16.771 0 30.367 13.596 30.367 30.367s-13.596 30.367-30.367 30.367z"/>
+							</svg>
+						</a>
+						<h5 class="title mb-0 text-nowrap checkpallet"></h5>
+					</div>
+					<div class="mid-content ms-5 ps-5">
+                        <h6 class="title mb-0 text-nowrap text-primary" id="palletid"></h6>
+					</div>
+					<div class="right-content">
+						<a href="javascript:location.reload();"  class="text-dark font-24">
+                            <svg width="24" height="24" viewBox="0 0 32 32">
+                                <path d="M28,16c-1.219,0-1.797,0.859-2,1.766C25.269,21.03,22.167,26,16,26c-5.523,0-10-4.478-10-10S10.477,6,16,6  c2.24,0,4.295,0.753,5.96,2H20c-1.104,0-2,0.896-2,2s0.896,2,2,2h6c1.104,0,2-0.896,2-2V4c0-1.104-0.896-2-2-2s-2,0.896-2,2v0.518  C21.733,2.932,18.977,2,16,2C8.268,2,2,8.268,2,16s6.268,14,14,14c9.979,0,14-9.5,14-11.875C30,16.672,28.938,16,28,16z"/>
+                            </svg>
+                        </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+    <!-- Header End -->
+
+	
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="container">
+            <div class="mt-0">
+				<div class="card mt-0" style="border-radius: 5%;" id="maindisplay"></div>
+				<div class="mt-2 d-flex align-items-center justify-content-evenly btn-group btn-group-toggle mx-3">
+					<a class="btn btn-primary" href="javascript:void(0);" id="splitx" ><span id="splitTxt">Split</span></a>
+                    <a class="btn btn-warning" href="javascript:void(0);" role="button"></i><span id="counter"></span></a>
+					<button class="btn btn-secondary  qrcode-reader" id="qrcode" ><span id="butTxt"></span></button>
+				</div>
+				<audio id="audio" src="assets/audio/beep.mp3" autoplay="false" ></audio>
+			</div>
+			<div class="dz-list style-3">
+				<form id="">					
+					<ul id="boxlist">
+					</ul>   
+				</form>	 
+			</div>
+			<div id="toast"></div>
+        </div>
+		
+    </div>
+    <!-- Page Content End-->
+	
+
+</div> 
+
+@@include("partials/mscripts.html")
+
+
+<% if (production==1) { %>
+	<script type="module" src="@@webRoot/assets/js/mpalletchk-min.js"></script>
+<% } else { %>
+	<script type="module" src="@@webRoot/assets/js/mpalletchk.js"></script>
+<% } %>
+
+
+
+
+      
+
+</html>

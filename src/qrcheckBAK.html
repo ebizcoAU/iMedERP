@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="AntiFake &amp; Product Authentication and Distribution Management System">
+	<meta name="author" content="eBizCoAU">
+	<meta name="keywords" content="Product Authentication and Distribution Management System">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+	<link rel="shortcut icon" href="assets/images/icons/icon.png" />
+
+	<title>antifake</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style> 
+        .bg-color1 {
+            background-color: rgba(248, 245, 244, 0.8);
+            height: 100vh;
+        }
+        .bg-color {
+            background-color: rgba(0, 0, 0, 0.8);
+            height: 100vh;
+        }
+        .ftco-section {
+            padding: 1em 0; }
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto; }
+        @media (min-width: 576px) {
+                .container {
+                max-width: 540px; 
+            } }
+        @media (min-width: 768px) {
+                .container {
+                max-width: 720px; 
+            } }
+        @media (min-width: 992px) {
+                .container {
+                max-width: 960px; 
+            } }
+        @media (min-width: 1200px) {
+                .container {
+                max-width: 1140px;
+             } }
+
+        .row {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px; 
+        }
+       
+        .card-img-top {
+            width: 80%;
+            height: 65vw;
+            object-fit: cover;
+        }
+        #qr-video {
+          width:100%;
+          height:100%;
+        }
+       
+    </style>
+    <link href="@@webRoot/node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+</head>
+
+<body>
+	<main class="ftco-section bg-color">
+		<div class="container">
+			<div class="row vh-100 justify-content-center">
+				<div class="col-sm-8 col-md-6 col-lg-4">
+					<div class="align-middle mt-2">
+                        <div class="mt-5">
+                            <div class="text-left">
+                                <h1 class="h2 text-primary"><img src="assets/images/icons/logo2.png" alt="antifake" height="50" />&nbsp;<b></b></h2>
+                            </div>
+                            <div class="card mt-3" style=" border-radius: 5%; " id="maindisplay">
+                                
+                            </div>
+                            
+                            <div class="mt-3 d-flex align-items-center justify-content-evenly btn-group btn-group-toggle mx-3" >
+                                <a class="btn btn-primary rounded-pill" href="/apphome" role="button"><i class="bi bi-activity"></i> Kích hoạt&nbsp;&nbsp;&nbsp; </a>
+                                <!-- <button type="submit" class="btn btn-lg btn-primary">Sign in</button> -->
+                                <button class="btn btn-secondary rounded-pill qrcode-reader" id="qrcode" ><i class="bi bi-qr-code-scan"></i> <span id="butTxt">Quét</span></button>
+                            </div>
+                            <div class="btn-group btn-group-toggle mx-3 mt-3 " data-toggle="buttons" id="camerachoice">
+                            </div>
+                            
+                            <div class="text-center p-3 mx-0 mt-0" style="color: rgba(58, 50, 50, 0.5);">
+                                <small>© 2023 Copyright
+                                <a class="text-warning" href="https://ebizco.com.au/">eBizco Pty Ltd</a></small>
+                            </div>
+                            <audio id="audio" src="assets/audio/beep.mp3" autoplay="false" ></audio>
+                        </div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<!-- Bootstrap core JavaScript-->
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for all pages-->
+
+    <script type="module">
+        import QrScanner from "@@webRoot/assets/js/qr-scanner.min.js";
+        const camList = document.getElementById('cam-list');
+        const camQrResult = document.getElementById('cam-qr-result');
+        var cameralist = ``;
+        var saveprod = ``;
+        var scanner;
+        var inprogress = false;
+
+        $('#qrcode').click(function() {
+            if ($('#butTxt').text().trim() == 'Quét') {
+                saveprod = $('#maindisplay').html();
+                $('#butTxt').html(' Stop ');
+                $('#maindisplay').html(`<div id="video-container"><video id="qr-video" class="card-top-image"></video></div>`);
+                const video = document.getElementById('qr-video');
+                const videoContainer = document.getElementById('video-container');
+                scanner = new QrScanner(video, result => setResult(camQrResult, result), {
+                    onDecodeError: error => {
+                    },
+                    highlightScanRegion: true,
+                    highlightCodeOutline: true,
+                });
+                inprogress = true;
+                scanner.start().then(() => {
+                QrScanner.listCameras(true).then((cameras) => {
+                        cameralist = ``;
+                        var i = 0;
+                        if (inprogress) {
+                            cameras.forEach(camera => {
+                                cameralist += ` 
+                                    <label class="btn btn-success  btn-sm ${i==0?'active':''}">
+                                        <input type="radio" name="options" value="${camera.id}" autocomplete="off" > ${camera.label.split(")")[0]})
+                                    </label>`;
+                                    i++;
+                            })
+                            console.log(cameralist)
+                            $('#camerachoice').html(cameralist); 
+                            $('[name="options"]').on('change',function(){
+                                scanner.setCamera($(this).val())
+                            }); 
+                            $('.btn-group').on('click', '.btn', function() {
+                                $(this).addClass('active').siblings().removeClass('active');
+                            });  
+                            $('[name="options"]').on('click', 'input', function() {
+                                $(this).prop('active', true).siblings().prop('active', false);
+                            }); 
+                        } else {
+                            $('#camerachoice').html('');   
+                        }
+                        
+                    });
+                });
+                // for debugging
+                window.scanner = scanner;
+            } else {
+                inprogress = false;
+                $('#butTxt').html(' Quét');
+                scanner.stop();
+                $('#maindisplay').html(saveprod);
+                $('#camerachoice').html(''); 
+            }
+
+        })
+
+        function setResult(label, result) {
+            var sound = document.getElementById("audio");
+            sound.play();
+            scanner.stop();
+            window.location = result.data;
+        }
+    
+        
+    
+    
+       
+    </script>
+
+<% if (production==1) { %>
+    <script type="module" src="@@webRoot/assets/js/qrcheck-min.js"></script>
+<% } else { %>
+    <script src="@@webRoot/assets/js/qrcheck.js"></script>
+<% } %>
+
+    <div id="status" style="display:none"><%=statusx%></div>
+    <div id="productName" style="display:none"><%=productNamex%></div>
+    <div id="subdir" style="display:none"><%=subdirx%></div>
+    <div id="imgLink" style="display:none"><%=imgLinkx%></div>
+    <div id="refID" style="display:none"><%=refIDx%></div>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @@include("partials/head.html")
+    <title>AntiFake</title>
+    <style>
+        .dx-toast-content {
+            min-width: 300px;
+            max-width: 400px;
+        }
+        #profileContainer {
+            height: 920px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="db-wrapper">
+        <!-- navbar vertical -->
+        @@include('partials/navbar-vertical.html', { "page_group": "prodman", "page": "prodmon"})
+        <!-- Page content -->
+        <div id="page-content">
+            @@include("partials/header.html")
+            <!-- Container fluid -->
+            <div class="pt-10 pb-10"></div>
+            <div class="container-fluid mt-n22 px-4">
+                <div class="row mt-7">
+                    <div class="card">
+                        <div class="dx-viewport">
+                            <div id="profileContainer" class="mt-2 px-2"></div>
+                        </div>
+                    </div> 
+                </div>
+                <div id="toast"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    @@include("partials/scripts.html")
+
+    <% if (production==1) { %>
+        <script src="@@webRoot/assets/js/prodmon-min.js"></script>
+        <script src="@@webRoot/assets/js/timeSolver-min.js"></script>
+    <% } else { %>
+        <script src="@@webRoot/assets/js/prodmon.js"></script>
+        <script src="@@webRoot/assets/js/timeSolver.js"></script>
+    <% } %>
+
+    <div id="productid" style="display:none"><%=productID%></div>
+
+
+</body>
+
+</html>

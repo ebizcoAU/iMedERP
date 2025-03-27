@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include("partials/mhead.html")
+</head>  
+<body data-theme-color="color-primary">
+<div class="page-wraper">
+    
+    <!-- Preloader -->
+    <div id="preloader">
+		<div class="loader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+    <!-- Preloader end-->
+	
+	<!-- Header -->
+    <header class="header">
+		<div class="main-bar">
+			<div class="container">
+				<div class="header-content">
+					<div class="left-content">
+						<a href="javascript:void(0);" class="back-btn">
+							<svg height="512" viewBox="0 0 486.65 486.65" width="512">
+								<path d="m202.114 444.648c-8.01-.114-15.65-3.388-21.257-9.11l-171.875-171.572c-11.907-11.81-11.986-31.037-.176-42.945.058-.059.117-.118.176-.176l171.876-171.571c12.738-10.909 31.908-9.426 42.817 3.313 9.736 11.369 9.736 28.136 0 39.504l-150.315 150.315 151.833 150.315c11.774 11.844 11.774 30.973 0 42.817-6.045 6.184-14.439 9.498-23.079 9.11z"/><path d="m456.283 272.773h-425.133c-16.771 0-30.367-13.596-30.367-30.367s13.596-30.367 30.367-30.367h425.133c16.771 0 30.367 13.596 30.367 30.367s-13.596 30.367-30.367 30.367z"/>
+							</svg>
+						</a>
+						<h5 class="title mb-0 text-nowrap" id="withdraw"></h5>
+					</div>
+					<div class="mid-content">
+					</div>
+					<div class="right-content">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+    <!-- Header End -->
+	
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="container dx-viewport profile-area">
+            <div class="profile">	
+				<div class="d-flex align-items-center mb-3">
+					<div class="media media-110 me-3">
+						<div id="qrcodeimg" class="p-1 media media-110"></div>
+                        <input type="hidden" id="qrcodeval" name="qrcodeval" value="<%= subdir +'-'+ roleID +'-'+ memberID %>">
+					</div>
+					<div class="about-profile">
+						<h5 class="sub-title mb-0 namex" ></h5>
+						<h6 class="sub-title fade-text mb-1 font-w500 emailx" ></h6>
+                        <h6 class="sub-title fade-text mb-0 font-w500 addressex"></h6>
+						<h6 class="sub-title fade-text mb-0 font-w500 momoaccountx"></h6>
+                        <h5 class="sub-title fade-text mb-0 font-w500 balancex"></h5>
+                        
+					</div>
+					<a href="/mprofileedit" class="edit-profile">
+						<i class="fa-solid fa-pencil"></i>
+					</a>
+				</div>
+			</div>   
+            <div class="edit-profile">
+				<form id="profileForm1" class="pt-4">
+					<div class="d-flex align-items-center mb-3">
+						<!-- Card Select -->
+						<div class="short-tag style-3" role="group" aria-label="radio toggle button">
+							<div class="clearfix">
+								<input type="radio" class="btn-check" name="btnradio" id="btnradio1" value="1" checked>
+								<label class="btn mb-0 tag-btn" for="btnradio1">
+									<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0_364_170)">
+											<path d="M31.9618 17.6005L29.5422 3.87805C29.3286 2.66655 28.275 1.81418 27.086 1.81418C26.9421 1.81418 5.89687 5.51174 5.89687 5.51174C4.53874 5.75124 3.63187 7.04637 3.87137 8.40449L4.10462 9.72743H23.098C25.5076 9.72743 27.4679 11.6877 27.4679 14.0973V15.8484V20.0965V20.9284L29.9363 20.4932C31.2944 20.2537 32.2013 18.9586 31.9618 17.6005Z" fill="#7D8FAB"/>
+											<path d="M25.5949 21.9693H0V27.6888C0 29.0678 1.118 30.1858 2.49706 30.1858H23.0978C24.4769 30.1858 25.5949 29.0678 25.5949 27.6888V21.9693ZM7.43419 27.9361H3.18606C2.66894 27.9361 2.24969 27.5168 2.24969 26.9997C2.24969 26.4826 2.66894 26.0633 3.18606 26.0633H7.43419C7.95131 26.0633 8.37056 26.4826 8.37056 26.9997C8.37056 27.5168 7.95138 27.9361 7.43419 27.9361Z" fill="#7D8FAB"/>
+											<path d="M0.00341797 13.9756H25.5921C25.5286 12.6531 24.4364 11.6003 23.0981 11.6003H2.49742C1.15917 11.6003 0.066918 12.6531 0.00341797 13.9756Z" fill="#7D8FAB"/>
+											<path d="M0 15.8484H25.5949V20.0965H0V15.8484Z" fill="#7D8FAB"/>
+										</g>
+									</svg>
+									<span>TopUp ĐiệnThoại</span>
+									
+								</label>
+							</div>
+							<div class="clearfix">
+								<input type="radio" class="btn-check" name="btnradio" id="btnradio2" value="2"  >
+								<label class="btn mb-0 tag-btn" for="btnradio2">
+									<svg viewBox="6.7169296377637995 5.309796557160162 81.4130703622362 74.62020344283985" xmlns="http://www.w3.org/2000/svg" width="2500" height="2320">
+										<rect fill="#a50064" height="87" rx="12.06" width="96"/>
+										<path d="M71 7.07c-9.45 0-17.11 7.36-17.11 16.43S61.57 39.93 71 39.93s17.13-7.36 17.13-16.43S80.47 7.07 71 7.07zm0 23.44a7.14 7.14 0 0 1-7.27-7 7.28 7.28 0 0 1 14.54 0 7.14 7.14 0 0 1-7.27 7zm-22-11.1V40h-9.88V19.31a2.9 2.9 0 0 0-5.8 0V40h-9.84V19.31a2.9 2.9 0 0 0-5.8 0V40H7.87V19.41A12.62 12.62 0 0 1 20.72 7.07a13.11 13.11 0 0 1 7.7 2.48 13.14 13.14 0 0 1 7.69-2.48A12.63 12.63 0 0 1 49 19.41zM71 47c-9.45 0-17.11 7.35-17.11 16.43S61.57 79.89 71 79.89s17.11-7.35 17.11-16.42S80.47 47 71 47zm0 23.44a7 7 0 1 1 7.27-7A7.14 7.14 0 0 1 71 70.48zM49 59.38v20.55h-9.88V59.27a2.9 2.9 0 0 0-5.8 0v20.66h-9.84V59.27a2.9 2.9 0 0 0-5.8 0v20.66H7.87V59.38A12.61 12.61 0 0 1 20.72 47a13.17 13.17 0 0 1 7.7 2.47A13.11 13.11 0 0 1 36.11 47 12.62 12.62 0 0 1 49 59.38z" fill="#fff"/>
+									</svg>
+									<span>Momo Pay</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="mb-3 ">
+						<div id="topupx"></div>
+						<div id="amountx"></div>
+					</div>
+					<div class="mb-3">
+						<a href="#" class="btn mt-2 btn-primary w-100 withdrawBtn">NHẬP</a>
+					</div>
+				</form>
+				<div class="text-center mb-auto p-2">
+					<p class="p" id="withdrawrule"></p>
+				</div>
+            </div>
+        </div>
+		<div id="toast"></div>
+    </div>
+    <!-- Page Content End-->
+</div> 
+
+<div id="name" style="display:none"><%=namex%></div>
+<div id="addressee" style="display:none"><%=addressx%></div>
+<div id="provincesid" style="display:none"><%=provincesIDx%></div>
+<div id="wardsid" style="display:none"><%=wardsIDx%></div>
+<div id="momoaccount" style="display:none"><%=momoAccountx%></div>
+<div id="email" style="display:none"><%=emailx%></div>
+<div id="walletvalue" style="display:none"><%=walletbalancex%></div>
+<div id="phonevalue" style="display:none"><%=phonex%></div>
+
+<link href="@@webRoot/node_modules/devextreme/dist/css/dx.light.css" rel="stylesheet">
+<script src="@@webRoot/node_modules/qrcodejs/qrcode.min.js"></script>
+@@include("partials/mscripts.html")
+<script src="@@webRoot/node_modules/devextreme/dist/js/dx.all.js"></script>
+
+<% if (production==1) { %>
+	<script src="@@webRoot/assets/js/mwithdraw-min.js"></script>
+	<script src="@@webRoot/assets/js/localsrc-min.js"></script>
+<% } else { %>
+	<script src="@@webRoot/assets/js/mwithdraw.js"></script>
+	<script src="@@webRoot/assets/js/localsrc.js"></script>
+<% } %>
+
+
+
+
+      
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	@@include("partials/mhead.html")
+</head>   
+<body data-theme-color="theme-color-settings">
+<div class="page-wraper">
+	<!-- splash -->        
+	<div class="loader-screen" id="splashscreen">
+		<div class="main-screen">
+			<div class="loader">
+			    <span style="--dz_item:1;"></span>
+			    <span style="--dz_item:2;"></span>
+			    <span style="--dz_item:3;"></span>
+			    <span style="--dz_item:4;"></span>
+			    <span style="--dz_item:5;"></span>
+			    <span style="--dz_item:6;"></span>
+			    <span style="--dz_item:7;"></span>
+			    <span style="--dz_item:8;"></span>
+			    <span style="--dz_item:9;"></span>
+			    <span style="--dz_item:10;"></span>
+			    <span style="--dz_item:11"></span>
+			    <span style="--dz_item:12;"></span>
+			    <span style="--dz_item:13;"></span>
+			    <span style="--dz_item:14;"></span>
+			    <span style="--dz_item:15;"></span>
+			    <span style="--dz_item:16;"></span>
+			    <span style="--dz_item:17;"></span>
+			    <span style="--dz_item:18;"></span>
+			    <span style="--dz_item:19;"></span>
+			    <span style="--dz_item:20;"></span>
+			</div>
+			<img class="icon" height="50" src="./assets/images/icons/logo.png"/>
+		</div>                                        
+	</div>                         
+	<!-- splash-->
+
+    <!-- Welcome Start -->
+	<div class="content-body">
+		<div class="welcome-area">
+			<div class="join-area">
+				<div class="swiper get-started">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="slide-info container">
+								<div class="started pt-5">
+									<h6 class="title font-w500">Comming Soon..</h6>
+                                    <h6 class="title font-w500">Dịch vụ mua bán xe máy</h6>
+									<p>Tuyệt đối bảo đảm, giám định xe, đầy đủ sổ chăm sóc xe, giao dịch an toàn.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-btn">
+						<div class="swiper-pagination style-1 flex-1"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <div class="footer fixed ">
+			<div class="container">
+				@@include("partials/mmenubar.html", { "activepanel": "servicelog"})
+			</div>
+		</div>	
+	</div>
+    <!-- Welcome End -->
+    
+</div>
+
+<!-- Libs JS -->
+<script src="@@webRoot/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="@@webRoot/node_modules/devextreme/dist/js/dx.all.js"></script>
+<script src="@@webRoot/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="@@webRoot/node_modules/swiper/swiper-bundle.min.js"></script>
+<script src="@@webRoot/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+<% if (production==1) { %>
+	<script src="@@webRoot/assets/js/language-min.js"></script>
+	<script src="@@webRoot/assets/js/dz.carousel-min.js"></script><!-- Swiper -->
+	<script src="@@webRoot/assets/js/settings-min.js"></script>
+	<script src="@@webRoot/assets/js/custom-min.js"></script>
+	<script src="@@webRoot/assets/js/mindex-min.js"></script>
+<% } else { %>
+	<script src="@@webRoot/assets/js/language.js"></script>
+	<script src="@@webRoot/assets/js/dz.carousel.js"></script><!-- Swiper -->
+	<script src="@@webRoot/assets/js/settings.js"></script>
+	<script src="@@webRoot/assets/js/custom.js"></script>
+	<script src="@@webRoot/assets/js/mindex.js"></script>
+<% } %>
+
+
+
+
+
+</body>
+</html>

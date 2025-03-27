@@ -1,0 +1,159 @@
+<div class="dark-overlay"></div>
+	<div class="sidebar style-2">
+		<a href="/mindex" class="side-menu-logo">
+			<h2 class="title pt-1 pb-1 mb-0 text-nowrap" id="memulogo">IMEDIC</h2>
+		</a>
+		<ul class="nav navbar-nav">
+			<% if ((roleID == 1) || (roleID>3)) { %>
+			<li class="nav-label contact"></li>
+			<% if (roleID == 1) { %>
+				<li>
+					<a class="nav-link" href="/magent">
+						<span class="dz-icon">
+							<span class="dz-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+								<path d="M16,11 C17.66,11 18.99,9.66 18.99,8 C18.99,6.34 17.66,5 16,5 C14.34,5 13,6.34 13,8 C13,9.66 14.34,11 16,11 Z M8,11 C9.66,11 10.99,9.66 10.99,8 C10.99,6.34 9.66,5 8,5 C6.34,5 5,6.34 5,8 C5,9.66 6.34,11 8,11 Z M8,13 C5.67,13 1,14.17 1,16.5 L1,18 C1,18.55 1.45,19 2,19 L14,19 C14.55,19 15,18.55 15,18 L15,16.5 C15,14.17 10.33,13 8,13 Z M16,13 C15.71,13 15.38,13.02 15.03,13.05 C15.05,13.06 15.06,13.08 15.07,13.09 C16.21,13.92 17,15.03 17,16.5 L17,18 C17,18.35 16.93,18.69 16.82,19 L22,19 C22.55,19 23,18.55 23,18 L23,16.5 C23,14.17 18.33,13 16,13 Z"></path>
+								</svg>
+							</span>
+						</span>
+						<span id="agent"></span>
+					</a>
+				</li>
+				<% } %>
+			<% if ((roleID == 1) || (roleID == 6)) { %>
+			<li>
+				<a class="nav-link" href="/magestaff">
+					<span class="dz-icon">
+						<span class="dz-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+							<path d="M16,11 C17.66,11 18.99,9.66 18.99,8 C18.99,6.34 17.66,5 16,5 C14.34,5 13,6.34 13,8 C13,9.66 14.34,11 16,11 Z M8,11 C9.66,11 10.99,9.66 10.99,8 C10.99,6.34 9.66,5 8,5 C6.34,5 5,6.34 5,8 C5,9.66 6.34,11 8,11 Z M8,13 C5.67,13 1,14.17 1,16.5 L1,18 C1,18.55 1.45,19 2,19 L14,19 C14.55,19 15,18.55 15,18 L15,16.5 C15,14.17 10.33,13 8,13 Z M16,13 C15.71,13 15.38,13.02 15.03,13.05 C15.05,13.06 15.06,13.08 15.07,13.09 C16.21,13.92 17,15.03 17,16.5 L17,18 C17,18.35 16.93,18.69 16.82,19 L22,19 C22.55,19 23,18.55 23,18 L23,16.5 C23,14.17 18.33,13 16,13 Z"></path>
+							</svg>
+						</span>
+					</span>
+					<span id="agestaff"></span>
+				</a>
+			</li>
+			<% } %>
+			<% if ( (roleID == 1) || (roleID == 6) || (roleID == 7)) { %>
+			<li>
+				<a class="nav-link" href="/mcustomer">
+					<span class="dz-icon">
+						<span class="dz-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+							<path d="M16,11 C17.66,11 18.99,9.66 18.99,8 C18.99,6.34 17.66,5 16,5 C14.34,5 13,6.34 13,8 C13,9.66 14.34,11 16,11 Z M8,11 C9.66,11 10.99,9.66 10.99,8 C10.99,6.34 9.66,5 8,5 C6.34,5 5,6.34 5,8 C5,9.66 6.34,11 8,11 Z M8,13 C5.67,13 1,14.17 1,16.5 L1,18 C1,18.55 1.45,19 2,19 L14,19 C14.55,19 15,18.55 15,18 L15,16.5 C15,14.17 10.33,13 8,13 Z M16,13 C15.71,13 15.38,13.02 15.03,13.05 C15.05,13.06 15.06,13.08 15.07,13.09 C16.21,13.92 17,15.03 17,16.5 L17,18 C17,18.35 16.93,18.69 16.82,19 L22,19 C22.55,19 23,18.55 23,18 L23,16.5 C23,14.17 18.33,13 16,13 Z"></path>
+							</svg>
+						</span>
+					</span>
+					<span id="customer"></span>
+				</a>
+			</li>
+			<% } %>	
+			<% } %>	
+			<li class="nav-label account"></li>
+			<li>
+				<a class="nav-link" href="/mwallet">
+					<span class="dz-icon">
+						<span class="dz-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="white">
+								<path id="Wallet" d="M24,12.05V8.25A1.25,1.25,0,0,0,22.75,7H22V4.25A1.25,1.25,0,0,0,20.75,3H2.5A2.5,2.5,0,0,0,0,5.5H0v15A2.5,2.5,0,0,0,2.5,23H22.75A1.24,1.24,0,0,0,24,21.75V18a1.23,1.23,0,0,0,1-1.2v-3.5A1.23,1.23,0,0,0,24,12.05ZM3,6A1,1,0,0,1,4,5H21V7H4A1,1,0,0,1,3,6ZM24,16.75a.25.25,0,0,1-.25.25H19.11A2.08,2.08,0,0,1,17,15.34,2,2,0,0,1,19,13h4.75a.25.25,0,0,1,.25.25ZM19,14a1,1,0,1,0,1,1A1,1,0,0,0,19,14Z"/>
+							</svg>
+					</span>
+					</span>
+					<span id="checkwallet"></span>
+				</a>
+			</li>
+			<li>
+				<a class="nav-link" href="/mprofileedit">
+					<span class="dz-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v1c0 .55.45 1 1 1h14c.55 0 1-.45 1-1v-1c0-2.66-5.33-4-8-4z"/></svg>
+					</span>
+					<span id="updateprofile"></span>
+				</a>
+			</li>
+			<li>
+				<a class="nav-link" href="/mchangepasswd">
+					<span class="dz-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 64 64" width="24px" fill="#000000">
+							<path d="M11,6c-2.757,0-5,2.243-5,5s2.243,5,5,5s5-2.243,5-5S13.757,6,11,6z M11,14c-1.654,0-3-1.346-3-3s1.346-3,3-3s3,1.346,3,3 S12.654,14,11,14z M26.76,19.83C29.19,14.52,28.09,8.279,23.92,4.1C21.27,1.46,17.75,0,14.01,0S6.75,1.46,4.1,4.1 C1.46,6.75,0,10.27,0,14.01s1.46,7.26,4.1,9.91c2.65,2.64,6.17,4.1,9.91,4.1c2,0,4-0.43,5.82-1.26l3.859,3.86l5.37,1.899 l1.061,4.801l4.72,1.04l1.08,4.859l3.96,0.09L42.4,48H48v-6.41L26.76,19.83z M46,46h-2.4l-2.51-4.66l-3.56-0.08l-1.011-4.58 l-4.72-1.04L30.77,31l-5.99-2.12l-4.559-4.56l-0.65,0.34c-1.711,0.89-3.631,1.359-5.561,1.359c-3.21,0-6.22-1.25-8.49-3.52 C3.25,20.23,2,17.221,2,14.01c0-3.21,1.25-6.22,3.52-8.49C7.79,3.25,10.8,2,14.01,2c3.211,0,6.221,1.25,8.49,3.52 c3.73,3.73,4.6,9.371,2.16,14.051l-0.33,0.64L46,42.41V46z"/> 
+						</svg>
+					</span>
+					<span id="changepassword"></span>
+				</a>
+			</li>
+			<!--li>
+				<a class="nav-link" href="chat.html">
+					<span class="dz-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 9h10c.55 0 1 .45 1 1s-.45 1-1 1H7c-.55 0-1-.45-1-1s.45-1 1-1zm6 5H7c-.55 0-1-.45-1-1s.45-1 1-1h6c.55 0 1 .45 1 1s-.45 1-1 1zm4-6H7c-.55 0-1-.45-1-1s.45-1 1-1h10c.55 0 1 .45 1 1s-.45 1-1 1z"/></svg>
+					</span>
+					<span>Chat</span>
+					<span class="badge badge-circle badge-info">5</span>
+				</a>
+			</li-->
+			<li><a class="nav-link logout" href="#">
+				<span class="dz-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g></g><g><g><path d="M5,5h6c0.55,0,1-0.45,1-1v0c0-0.55-0.45-1-1-1H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h6c0.55,0,1-0.45,1-1v0 c0-0.55-0.45-1-1-1H5V5z"/><path d="M20.65,11.65l-2.79-2.79C17.54,8.54,17,8.76,17,9.21V11h-7c-0.55,0-1,0.45-1,1v0c0,0.55,0.45,1,1,1h7v1.79 c0,0.45,0.54,0.67,0.85,0.35l2.79-2.79C20.84,12.16,20.84,11.84,20.65,11.65z"/></g></g></svg>
+				</span>
+				<span id="logout"></span>
+			</a></li>
+            <li class="nav-label settings"></li>
+			<li>
+				<a href="/mlanguage" class="item-content item-link">
+					<div class="dz-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+					</div>
+					<div class="dz-inner">
+						<span class="language"></span>
+					</div>
+				</a>
+			</li>
+            <li class="nav-color" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                <a href="javascript:void(0);" class="nav-link">
+                    <span class="dz-icon">                        
+                        <svg class="color-plate" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 24 24" width="30px" fill="#000000">
+							<path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+						</svg>
+                    </span>					
+                    <span class="colortheme"></span>					
+                </a>
+            </li>
+            <li>
+                <div class="mode">
+                    <span class="dz-icon">
+                        <svg class="dark" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g></g><g><g><g><path d="M11.57,2.3c2.38-0.59,4.68-0.27,6.63,0.64c0.35,0.16,0.41,0.64,0.1,0.86C15.7,5.6,14,8.6,14,12s1.7,6.4,4.3,8.2 c0.32,0.22,0.26,0.7-0.09,0.86C16.93,21.66,15.5,22,14,22c-6.05,0-10.85-5.38-9.87-11.6C4.74,6.48,7.72,3.24,11.57,2.3z"/></g></g></g>
+						</svg>
+                    </span>					
+                    <span class="text-dark darkmode" ></span>
+                    <div class="custom-switch">
+                        <input type="checkbox" class="switch-input theme-btn" id="toggle-dark-menu">
+                        <label class="custom-switch-label" for="toggle-dark-menu"></label>
+                    </div>
+                </div>
+            </li>
+			<li>
+                <div class="mode">
+                    <span class="dz-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M12.6 18.06c-.36.28-.87.28-1.23 0l-6.15-4.78c-.36-.28-.86-.28-1.22 0-.51.4-.51 1.17 0 1.57l6.76 5.26c.72.56 1.73.56 2.46 0l6.76-5.26c.51-.4.51-1.17 0-1.57l-.01-.01c-.36-.28-.86-.28-1.22 0l-6.15 4.79zm.63-3.02l6.76-5.26c.51-.4.51-1.18 0-1.58l-6.76-5.26c-.72-.56-1.73-.56-2.46 0L4.01 8.21c-.51.4-.51 1.18 0 1.58l6.76 5.26c.72.56 1.74.56 2.46-.01z"/></svg>
+					</span>				
+                    <span class="text-dark usescanner" ></span>
+                    <div class="custom-switch">
+                        <input type="checkbox" class="switch-input scanner-btn" id="toggle-scanner-menu">
+                        <label class="custom-switch-label" for="toggle-scanner-menu"></label>
+                    </div>
+                </div>
+            </li>
+		</ul>
+		<div class="author-box mt-auto mb-0">
+			<div class="dz-media">
+				<% if ((imgLink === "null") || (imgLink === "undefined") || (imgLink === "")) { %>
+					<img src="public/<%=subdir%>/avatar.jpg" alt="author-image">
+				<% } else { %>	
+					<img src="public/<%=subdir%>/<%=imgLink%>" alt="author-image">
+				<% } %>	
+			</div>
+			<div class="dz-info">
+				<h5 class="name"><%=name %></h5>
+				<span><%= company != 0?company:'' %></span>
+			</div>
+		</div>
+    </div>
+   
