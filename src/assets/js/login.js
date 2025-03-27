@@ -5,6 +5,7 @@
   if ((!result2) && (!currLoc.includes("localhost")) 
     && (!currLoc.includes("vintaminon.ddns.net"))
     && (!currLoc.includes("vintaminon.ddns.net")) 
+    && (!currLoc.includes("vitamax.antifake.vn")) 
     && (!currLoc.includes("antifake.ddns.net")) ) {
     $('body').addClass("invisible")
   } 

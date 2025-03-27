@@ -9,6 +9,7 @@ let result = pattern.test(currLoc);
 if ((!result) && (!currLoc.includes("localhost")) 
   && (!currLoc.includes("vintaminon.ddns.net"))
   && (!currLoc.includes("adminvintaminon.ddns.net")) 
+  && (!currLoc.includes("vitamax.antifake.vn")) 
   && (!currLoc.includes("antifake.ddns.net")) ) {
   $('body').addClass("invisible")
 } 
