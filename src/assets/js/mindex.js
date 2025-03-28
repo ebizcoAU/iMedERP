@@ -22,8 +22,10 @@ $( document ).ready(function() {
   let pattern = /^(https:\/\/)[a-z]{0,16}(.antifake.vn\/)/;
   let result = pattern.test(currLoc);
   if ((!result) && (!currLoc.includes("localhost")) 
-  		&& (!currLoc.includes("vintaminon.ddns.net"))
-  		&& (!currLoc.includes("adminvintaminon.ddns.net"))
+  		&& (!currLoc.includes("vitamax.ddns.net"))
+  		&& (!currLoc.includes("adminvitamax.ddns.net"))
+  		&& (!currLoc.includes("vitamax.antifake.vn"))
+  		&& (!currLoc.includes("admin.vitamax.antifake.vn"))
 		&& (!currLoc.includes("antifake.ddns.net"))) {
     $('body').addClass("invisible")
   } 

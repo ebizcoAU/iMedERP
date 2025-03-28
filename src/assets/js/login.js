@@ -3,8 +3,9 @@
   let pattern2 = /^(https:\/\/)[a-z]{0,16}(.antifake.vn\/)/;
   let result2 = pattern2.test(currLoc);
   if ((!result2) && (!currLoc.includes("localhost")) 
-    && (!currLoc.includes("vintaminon.ddns.net"))
-    && (!currLoc.includes("vintaminon.ddns.net")) 
+    && (!currLoc.includes("vitamax.ddns.net"))
+    && (!currLoc.includes("adminvitamax.ddns.net")) 
+    && (!currLoc.includes("admin.vitamax.antifake.vn")) 
     && (!currLoc.includes("vitamax.antifake.vn")) 
     && (!currLoc.includes("antifake.ddns.net")) ) {
     $('body').addClass("invisible")

@@ -125,7 +125,7 @@ app.use(function( req, res, next){
     res.locals.la = {
       lang: "vi",
       themeID: '1',
-      production: (os.hostname() === 'auzora01')?1:0,
+      production: inproduction,
       devcompanyurl: 'https://ebizco.com.au' 
     }
     req.session.lang = 'vi';
