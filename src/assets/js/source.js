@@ -208,14 +208,18 @@ const unitmeasureSource2x = [
     { status: 11, statext: 'vi'} //vi
 ];
 const typeSource = [
-    { status: 1, statext: formatMessage('mednoprescript')}, 
-    { status: 2, statext: formatMessage('medprescript')}, 
-    { status: 3, statext: formatMessage('supplementfood')}, 
-    { status: 4, statext: formatMessage('tradmed')}, 
-    { status: 5, statext: formatMessage('medkit')},
-    { status: 6, statext: formatMessage('cosmetic')},
-    { status: 7, statext: formatMessage('monprescript')},
-    
+    { status: 1, statext: formatMessage('mednoprescript'), statext2: formatMessage('lmednoprescript'), imglink: './assets/img/icon/medicine.svg' }, 
+    { status: 2, statext: formatMessage('medprescript'), statext2: formatMessage('lmedprescript'), imglink: './assets/img/icon/lab-test.svg' }, 
+    { status: 3, statext: formatMessage('supplementfood'), statext2: formatMessage('lsupplementfood'), imglink: './assets/img/icon/food-nutrition.svg' }, 
+    { status: 4, statext: formatMessage('tradmed'), statext2: formatMessage('ltradmed'), imglink: './assets/img/icon/supplements.svg'}, 
+    { status: 5, statext: formatMessage('medkit'), statext2: formatMessage('lmedkit'), imglink: './assets/img/icon/health-care.svg'},
+    { status: 6, statext: formatMessage('cosmetic'), statext2: formatMessage('lcosmetic'), imglink: './assets/img/icon/medical-supplies.svg'},
+    { status: 7, statext: formatMessage('monprescript'), statext2: formatMessage('lmonprescript'), imglink: './assets/img/icon/beauty-care.svg'},
+    { status: 8, statext: formatMessage('sexualwellness'), statext2: formatMessage('lsexualwellness'), imglink: './assets/img/icon/sexual.svg'}, 
+    { status: 9, statext: formatMessage('fitness'), statext2: formatMessage('lfitness'), imglink: './assets/img/icon/fitness.svg'}, 
+    { status: 10, statext: formatMessage('babymomcare'), statext2: formatMessage('lbabymomcare'), imglink: './assets/img/icon/baby-mom-care.svg'}, 
+    { status: 11, statext: formatMessage('medequip'), statext2: formatMessage('lmedequip'), imglink: './assets/img/icon/medical-equipements.svg'},
+    { status: 12, statext: formatMessage('petcare'), statext2: formatMessage('lpetcare'), imglink: './assets/img/icon/pet-care.svg'}
 ];
 
 const unitweightSource = [

@@ -448,6 +448,36 @@ Version         : 1.0
         $('.invoice-print-btn').show();
    });
 
+   var categorylist = document.getElementById('categorylisting');
+   if (categorylist !== null) {
+        var itemList =``;
+        typeSource.forEach((m, index)=>{
+            itemList += `
+                <div class="category-item col-6 col-md-3 col-lg-2"">
+                    <a href="#">
+                        <div class="category-info">
+                            <div class="icon">
+                                <img src="${m.imglink}" alt="">
+                            </div>
+                            <div class="content">
+                                <h4>${m.statext2}</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            `;
+        })
+        categorylist.innerHTML = itemList;
+
+        /*
+        categorylist.classList.add("category-slider");
+        categorylist.classList.add("owl-carousel");
+        categorylist.classList.add("owl-theme");
+        categorylist.classList.add("wow");
+        categorylist.classList.add("fadeInUp");
+        */
+
+   }
 
 })(jQuery);
 
